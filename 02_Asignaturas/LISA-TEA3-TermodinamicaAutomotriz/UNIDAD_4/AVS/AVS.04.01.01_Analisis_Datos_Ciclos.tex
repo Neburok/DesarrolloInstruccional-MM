@@ -1,0 +1,80 @@
+\documentclass{article}
+
+% --- Cargar la plantilla de estilo UTP ---
+\usepackage{_PLANTILLAS/TEMPLATE_LECTURA_PDF/utp-doc}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{tabularx}
+
+\begin{document}
+
+% --- Título de la AVS ---
+\practicatitle{Actividad de Verificación de Saberes (AVS): Análisis de Datos de Ciclos Termodinámicos}
+
+% --- Metadatos de la Actividad ---
+\textbf{Asignatura:} Termodinámica Automotriz \\
+\textbf{Unidad 4:} Procesos Termodinámicos y de Transferencia de Calor \\
+\textbf{Tema:} Ciclos Termodinámicos (Carnot, Otto, Diesel)
+
+\vspace{5mm}
+\hrule
+\vspace{5mm}
+
+\section*{Objetivo de la Actividad}
+
+Al completar esta actividad, el estudiante será capaz de analizar datos de operación de motores térmicos, aplicar los principios de los ciclos termodinámicos para calcular eficiencias y balances de energía, e interpretar los resultados en un formato conciso.
+
+\section*{Instrucciones Generales}
+
+\begin{enumerate}
+    \item Esta actividad se realizará de forma individual en el laboratorio o aula de cómputo, con una duración máxima de \textbf{1.5 horas}.
+    \item Los datos necesarios para la resolución de los problemas serán proporcionados al inicio de la sesión, ya sea a través de una práctica de laboratorio o de una simulación interactiva de un ciclo termodinámico.
+    \item Presente todos los cálculos de manera clara y ordenada. Utilice la notación LaTeX para todas las ecuaciones y variables.
+    \item Las respuestas deben ser concisas y directas, enfocándose en los resultados numéricos y una breve interpretación.
+    \item El entregable será un documento (físico o digital, según se indique) con las soluciones a los problemas planteados.
+\end{enumerate}
+
+\section*{Escenario y Problemas a Resolver}
+
+Se ha realizado una simulación de un motor de gasolina operando bajo un ciclo Otto ideal. A continuación, se presentan los datos obtenidos en puntos clave del ciclo. Su tarea es analizar estos datos para evaluar el desempeño termodinámico del motor.
+
+\textbf{Datos Proporcionados (Ejemplo - los datos reales se entregarán en la sesión):}
+
+\begin{itemize}
+    \item \textbf{Motor:} Gasolina, 4 cilindros.
+    \item \textbf{Ciclo Ideal:} Otto.
+    \item \textbf{Relación de Compresión ($r$):} 9.0:1
+    \item \textbf{Relación de calores específicos ($k$):} 1.4
+    \item \textbf{Calor suministrado por ciclo ($Q_{in}$):} $1200 \, kJ/kg$
+    \item \textbf{Masa de mezcla aire-combustible por ciclo:} $0.003 \, kg$
+\end{itemize}
+
+\textbf{Problemas a Resolver:}
+
+\begin{enumerate}
+    \item \textbf{Eficiencia del Ciclo Otto:} Calcule la eficiencia térmica ideal del motor ($\eta_{th,Otto}$). (30\%)
+    \item \textbf{Balance de Energía:} Determine el trabajo neto producido por ciclo ($W_{neto}$) y el calor rechazado por ciclo ($Q_{rechazado}$). (40\%)
+    \item \textbf{Interpretación:} Si este motor operara bajo un ciclo Diesel con la misma relación de compresión, ¿esperaría una mayor o menor eficiencia? Justifique brevemente su respuesta. (30\%)
+\end{enumerate}
+
+\vspace{5mm}
+\hrule
+\vspace{5mm}
+
+\section*{Rúbrica de Evaluación}
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|}
+\hline
+\textbf{Criterio de Evaluación} & \textbf{10 Estratégico (90-100\%)} & \textbf{9 Autónomo (80-89\%)} & \textbf{8 Básico (70-79\%)} & \textbf{7 Receptivo (60-69\%)} & \textbf{6 Preformal (50-59\%)} & \textbf{0 No entrega (0\%)} & \textbf{Puntaje} \\
+\hline
+\textbf{1. Eficiencia del Ciclo Otto} & Cálculos precisos y completos de eficiencia, trabajo neto y calor rechazado. & Cálculos correctos con errores menores o alguna omisión. & Cálculos con errores significativos en una sección. & Cálculos incompletos o con errores conceptuales. & Cálculos incorrectos o ausentes. & No entrega. & /30\% \\
+\hline
+\textbf{2. Balance de Energía} & Cálculos precisos y completos de $W_{neto}$ y $Q_{rechazado}$. & Cálculos correctos con errores menores o alguna omisión. & Cálculos con errores significativos en una sección. & Cálculos incompletos o con errores conceptuales. & Cálculos incorrectos o ausentes. & No entrega. & /40\% \\
+\hline
+\textbf{3. Interpretación} & Análisis profundo y justificado, conclusión clara. & Análisis adecuado, conclusión clara. & Análisis básico, conclusión aceptable. & Análisis superficial, conclusión vaga. & Análisis incorrecto o ausente, sin conclusión. & No entrega. & /30\% \\
+\hline
+\textbf{Puntaje Total} & & & & & & & /100\% \\
+\hline
+\end{tabularx}
+
+\end{document}

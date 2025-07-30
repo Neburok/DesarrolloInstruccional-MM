@@ -1,0 +1,81 @@
+\documentclass{article}
+
+% --- Cargar la plantilla de estilo UTP ---
+\usepackage{_PLANTILLAS/TEMPLATE_LECTURA_PDF/utp-doc}
+\usepackage{amsmath}
+
+\begin{document}
+
+% --- Título de la Guía ---
+\practicatitle{Guía de Ejercicios Resueltos: Ciclos Termodinámicos}
+
+% --- Metadatos de la Actividad ---
+\textbf{Asignatura:} Termodinámica Automotriz \\
+\textbf{Unidad 4:} Procesos Termodinámicos y de Transferencia de Calor
+
+\vspace{5mm}
+\hrule
+\vspace{5mm}
+
+\section*{Introducción}
+
+Esta guía de ejercicios está diseñada para reforzar su comprensión de los ciclos termodinámicos fundamentales: Carnot, Otto y Diesel. La resolución de estos problemas le permitirá aplicar los conceptos teóricos aprendidos en la lectura y desarrollar sus habilidades de cálculo y análisis. Cada ejercicio incluye una solución detallada paso a paso para facilitar su aprendizaje.
+
+\section*{Ejercicio 1: Eficiencia de un Ciclo de Carnot}
+
+Un motor térmico opera siguiendo un ciclo de Carnot entre una fuente de calor a $900 \, K$ y un sumidero de calor a $300 \, K$.
+
+a) Calcule la eficiencia térmica de este motor.
+
+b) Si el motor absorbe $1500 \, kJ$ de calor de la fuente caliente por ciclo, ¿cuánto trabajo neto produce y cuánto calor rechaza al sumidero?
+
+\subsection*{Solución Detallada}
+
+a) \textbf{Eficiencia Térmica del Ciclo de Carnot:}
+
+La eficiencia térmica de un ciclo de Carnot se calcula utilizando las temperaturas absolutas de la fuente caliente ($T_H$) y el sumidero frío ($T_L$):
+
+$$ \eta_{th,Carnot} = 1 - \frac{T_L}{T_H} $$
+
+Sustituyendo los valores dados:
+$T_H = 900 \, K$
+$T_L = 300 \, K$
+
+$$ \eta_{th,Carnot} = 1 - \frac{300 \, K}{900 \, K} = 1 - \frac{1}{3} = \frac{2}{3} $$
+
+$$ \eta_{th,Carnot} \approx 0.6667 \quad \text{o} \quad 66.67\% $$
+
+La eficiencia térmica de este motor de Carnot es del $66.67\%$.
+
+b) \textbf{Trabajo Neto Producido y Calor Rechazado:}
+
+Sabemos que la eficiencia térmica también se define como la relación entre el trabajo neto producido ($W_{neto}$) y el calor absorbido de la fuente caliente ($Q_H$):
+
+$$ \eta_{th} = \frac{W_{neto}}{Q_H} $$
+
+Podemos despejar el trabajo neto:
+
+$$ W_{neto} = \eta_{th} \times Q_H $$
+
+Sustituyendo los valores:
+$Q_H = 1500 \, kJ$
+
+$$ W_{neto} = 0.6667 \times 1500 \, kJ = 1000.05 \, kJ $$
+
+El trabajo neto producido por el motor es de aproximadamente $1000 \, kJ$.
+
+Para calcular el calor rechazado al sumidero ($Q_L$), utilizamos el balance de energía para un ciclo:
+
+$$ W_{neto} = Q_H - Q_L $$
+
+Despejando $Q_L$:
+
+$$ Q_L = Q_H - W_{neto} $$
+
+Sustituyendo los valores:
+
+$$ Q_L = 1500 \, kJ - 1000 \, kJ = 500 \, kJ $$
+
+El calor rechazado al sumidero es de $500 \, kJ$.
+
+\end{document}

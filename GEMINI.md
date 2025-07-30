@@ -22,15 +22,18 @@ Nuestro proceso se enfoca en la fase de **Desarrollo** de ADDIE y sigue una estr
 
 Todos los materiales didácticos deben seguir esta convención de nomenclatura:
 
-**`[TIPO].[UNIDAD].[TEMA].[ACTIVIDAD]_[Nombre_Descriptivo].ext`**
+-   **AD, AR, AVS:** `[TIPO].[UNIDAD].[TEMA].[ACTIVIDAD]_[Nombre_Descriptivo].ext`
+    -   **`[TIPO]`**: `AD`, `AR`, `AVS`.
+    -   **`[UNIDAD]`**: Número de unidad (ej. `04`).
+    -   **`[TEMA]`**: Número de tema dentro de la unidad (ej. `01`).
+    -   **`[ACTIVIDAD]`**: Número secuencial del recurso para ese tema (ej. `01`).
+    -   **`[Nombre_Descriptivo]`**: Nombre claro usando guiones bajos.
+    -   **Ejemplo:** `AD.04.01.01_Lectura_Ciclos_Termodinamicos.md`
 
-- **`[TIPO]`**: `AD`, `AR`, `AVS`, `ER`.
-- **`[UNIDAD]`**: Número de unidad (ej. `04`).
-- **`[TEMA]`**: Número de tema dentro de la unidad (ej. `01`).
-- **`[ACTIVIDAD]`**: Número secuencial del recurso para ese tema (ej. `01`).
-- **`[Nombre_Descriptivo]`**: Nombre claro usando guiones bajos.
-
-**Ejemplo:** `AD.04.01.01_Lectura_Ciclos_Termodinamicos.md`
+-   **ER (Evaluación de Recuperación):** `ER.[UNIDAD]_[Nombre_Asignatura].ext`
+    -   **`[UNIDAD]`**: Número de unidad (ej. `04`).
+    -   **`[Nombre_Asignatura]`**: Nombre completo de la asignatura (ej. `Termodinamica_Automotriz`).
+    -   **Ejemplo:** `ER.04_Termodinamica_Automotriz.md`
 
 ### Proceso de Desarrollo por Unidad
 

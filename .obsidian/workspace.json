@@ -1,0 +1,182 @@
+{
+  "main": {
+    "id": "013e900969f4cd40",
+    "type": "split",
+    "children": [
+      {
+        "id": "3edc1ddb63d7a7aa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e4b875dc5d6d505b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ToDo.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ToDo"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "911fd3a42b2cc3cd",
+    "type": "split",
+    "children": [
+      {
+        "id": "fc9a1fb8a741c74e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8fb5d823e3cda062",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de archivos"
+            }
+          },
+          {
+            "id": "cab6d8e253de5976",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Buscar"
+            }
+          },
+          {
+            "id": "340269212a6ba30b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "cbcbd62a34f1892d",
+    "type": "split",
+    "children": [
+      {
+        "id": "aa6b54c960c39144",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "da89034a2f1ba76e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "ToDo.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Enlaces entrantes de ToDo"
+            }
+          },
+          {
+            "id": "aaaa67ca26a00314",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "ToDo.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Enlaces salientes de ToDo"
+            }
+          },
+          {
+            "id": "6d4a459be0c63aaf",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "1a937e17cca0133b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "ToDo.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Esquema de ToDo"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false
+    }
+  },
+  "active": "e4b875dc5d6d505b",
+  "lastOpenFiles": [
+    "02_Asignaturas/LISA-TEA3-TermodinamicaAutomotriz/UNIDAD_4/_PRODUCTOS/AD.04.01.01_Lectura_Ciclos_Termodinamicos.pdf",
+    "Resumen_Sesion_2025-07-29.md",
+    "02_Asignaturas/LISA-TEA3-TermodinamicaAutomotriz/UNIDAD_4/ER/ER.04_Termodinamica_Automotriz.tex",
+    "02_Asignaturas/LISA-TEA3-TermodinamicaAutomotriz/UNIDAD_4/_PRODUCTOS/AD.04.02.01_Lectura_Transferencia_de_Calor.pdf",
+    "02_Asignaturas/LISA-TEA3-TermodinamicaAutomotriz/UNIDAD_4/_PRODUCTOS/AD.04.01.02_Lectura_Procesos_Termodinamicos.pdf",
+    "02_Asignaturas/LISA-TEA3-TermodinamicaAutomotriz/UNIDAD_4/AD/AD.04.02.01_Lectura_Transferencia_de_Calor.md",
+    "02_Asignaturas/LISA-TEA3-TermodinamicaAutomotriz/UNIDAD_4/AD/AD.04.01.01_Lectura_Ciclos_Termodinamicos.md",
+    "02_Asignaturas/LISA-TEA3-TermodinamicaAutomotriz/_PROGRAMA/TERMODINAMICAAUTOMOTRIZ.pdf"
+  ]
+}

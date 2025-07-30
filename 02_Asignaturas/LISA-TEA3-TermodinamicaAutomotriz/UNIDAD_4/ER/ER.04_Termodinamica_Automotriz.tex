@@ -1,0 +1,136 @@
+\documentclass{article}
+
+% --- Cargar la plantilla de estilo UTP ---
+\usepackage{_PLANTILLAS/TEMPLATE_LECTURA_PDF/utp-doc}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{tabularx}
+
+\begin{document}
+
+% --- Título de la ER ---
+\practicatitle{Evaluación de Recuperación: Análisis Termodinámico de un Motor Automotriz}
+
+% --- Metadatos de la Actividad ---
+\textbf{Asignatura:} Termodinámica Automotriz \\
+\textbf{Unidad 4:} Procesos Termodinámicos y de Transferencia de Calor
+
+\vspace{5mm}
+\hrule
+\vspace{5mm}
+
+\section*{Objetivo de la Actividad}
+
+Al completar esta actividad, el estudiante será capaz de analizar datos experimentales (o simulados) de un motor de combustión interna, aplicar los principios de ciclos termodinámicos y transferencia de calor para calcular parámetros clave, e interpretar los resultados en un formato conciso y estructurado.
+
+\section*{Instrucciones Generales}
+
+\begin{enumerate}
+    \item Esta actividad se realizará de forma individual en el laboratorio o aula de cómputo, con una duración máxima de \textbf{3 horas}.
+    \item Los datos necesarios para la resolución de los problemas serán proporcionados al inicio de la sesión, ya sea a través de una práctica de laboratorio o de una simulación interactiva.
+    \item Presente todos los cálculos de manera clara y ordenada. Utilice la notación LaTeX para todas las ecuaciones y variables.
+    \item Las respuestas deben ser concisas y directas, enfocándose en los resultados numéricos y una breve interpretación.
+    \item El entregable será un documento (físico o digital, según se indique) con las soluciones a los problemas planteados.
+\end{enumerate}
+
+\section*{Metodología para el Desarrollo del Estudio de Caso}
+
+Para completar este estudio de caso de manera efectiva, siga los siguientes pasos:
+
+\begin{enumerate}
+    \item \textbf{Comprensión del Escenario:} Lea detenidamente la descripción del caso de estudio y los datos proporcionados. Identifique el objetivo principal de la evaluación del motor.
+    \item \textbf{Análisis del Ciclo Otto:}
+    \begin{itemize}
+        \item Revise los conceptos de ciclos termodinámicos, especialmente el Ciclo Otto, en sus materiales de AD y AR.
+        \item Realice los cálculos de eficiencia térmica, trabajo neto y calor rechazado, mostrando claramente cada paso y las fórmulas utilizadas.
+        \item Asegúrese de usar las unidades correctas y la notación LaTeX para las ecuaciones.
+    \end{itemize}
+    \item \textbf{Análisis de Transferencia de Calor:}
+    \begin{itemize}
+        \item Repase los mecanismos de conducción, convección y radiación en sus materiales de AD y AR.
+        \item Realice los cálculos de las tasas de transferencia de calor por convección y radiación, prestando especial atención a las unidades y a la conversión de temperaturas a Kelvin para la radiación.
+        \item Muestre todos los pasos de cálculo.
+    \end{itemize}
+    \item \textbf{Interpretación y Conclusión:}
+    \begin{itemize}
+        \item Compare los resultados obtenidos en los cálculos de convección y radiación. Determine cuál mecanismo es más relevante para la disipación de calor en este caso y justifique su respuesta basándose en los valores calculados.
+        \item Formule conclusiones claras y concisas sobre el desempeño termodinámico y térmico general del motor, basándose en sus análisis.
+        \item Proponga recomendaciones prácticas y justificadas para mejorar la eficiencia del motor o su sistema de enfriamiento. Piense en soluciones que podrían implementarse en un contexto automotriz real.
+    \end{itemize}
+    \item \textbf{Elaboración del Informe:}
+    \begin{itemize}
+        \item Estructure su informe de manera lógica, siguiendo las secciones indicadas en los 'Requerimientos del Informe Técnico'.
+        \item Asegúrese de que el informe sea claro, conciso y profesional. Utilice un lenguaje técnico adecuado.
+        \item Revise la ortografía, gramática y el formato general. La presentación es parte de la evaluación.
+    \end{itemize}
+\end{enumerate}
+
+\section*{Escenario y Problemas a Resolver}
+
+Se ha realizado una prueba de rendimiento y gestión térmica en un motor de gasolina de 4 cilindros en un banco de pruebas. A continuación, se presentan los datos obtenidos en puntos clave del ciclo de operación y del sistema de enfriamiento. Su tarea es analizar estos datos para evaluar el desempeño termodinámico y térmico del motor.
+
+\textbf{Datos Proporcionados (Ejemplo - los datos reales se entregarán en la sesión):}
+
+\begin{itemize}
+    \item \textbf{Datos del Ciclo de Operación (Motor de Gasolina - Ciclo Otto Idealizado):}
+    \begin{itemize}
+        \item Relación de Compresión (\$r\$): 9.5:1
+        \item Relación de calores específicos (\$k\$): 1.4
+        \item Calor suministrado por ciclo (\$Q_{in}\$): \$1500 \, kJ/kg\$
+        \item Masa de mezcla aire-combustible por ciclo: \$0.004 \, kg\$
+    \end{itemize}
+    \item \textbf{Datos del Sistema de Enfriamiento (Bloque del Motor):}
+    \begin{itemize}
+        \item Temperatura superficial exterior del bloque (\$T_{superficie}\$): \$105^\circ C\$
+        \item Temperatura del aire ambiente (\$T_{ambiente}\$): \$28^\circ C\$
+        \item Área superficial expuesta del bloque (\$A_{bloque}\$): \$0.55 \, m^2\$
+        \item Coeficiente de transferencia de calor por convección (\$h_{aire}\$): \$18 \, W/m^2 \cdot K\$
+        \item Emisividad del bloque del motor (\$\epsilon\$): \$0.8\$
+    \end{itemize}
+\end{itemize}
+
+\textbf{Problemas a Resolver:}
+
+\begin{enumerate}
+    \item \textbf{Análisis del Ciclo Otto:}
+    \begin{itemize}
+        \item Calcule la eficiencia térmica ideal del motor (\$\eta_{th,Otto}\$). (20\%)
+        \item Determine el trabajo neto producido por ciclo (\$W_{neto}\$) y el calor rechazado por ciclo (\$Q_{rechazado}\$). (20\%)
+    \end{itemize}
+    \item \textbf{Análisis de Transferencia de Calor:}
+    \begin{itemize}
+        \item Calcule la tasa de transferencia de calor por convección desde la superficie exterior del bloque del motor al aire ambiente. (20\%)
+        \item Calcule la tasa de transferencia de calor por radiación desde la superficie exterior del bloque del motor a los alrededores. (20\%)
+    \end{itemize}
+    \item \textbf{Interpretación y Conclusión:}
+    \begin{itemize}
+        \item Basado en sus cálculos, ¿cuál de los dos mecanismos (convección o radiación) es más significativo para la disipación de calor en este escenario? Justifique brevemente. (10\%)
+        \item Proponga una breve recomendación para mejorar la disipación de calor del motor. (10\%)
+    \end{itemize}
+\end{enumerate}
+
+\vspace{5mm}
+\hrule
+\vspace{5mm}
+
+\section*{Rúbrica de Evaluación}
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|}
+\hline
+\textbf{Criterio de Evaluación} & \textbf{10 Estratégico (90-100\%)} & \textbf{9 Autónomo (80-89\%)} & \textbf{8 Básico (70-79\%)} & \textbf{7 Receptivo (60-69\%)} & \textbf{6 Preformal (50-59\%)} & \textbf{0 No entrega (0\%)} & \textbf{Puntaje} \\
+\hline
+\textbf{1. Análisis del Ciclo Otto} & Cálculos precisos y completos de eficiencia, trabajo neto y calor rechazado. & Cálculos correctos con errores menores o alguna omisión. & Cálculos con errores significativos en una sección. & Cálculos incompletos o con errores conceptuales. & Cálculos incorrectos o ausentes. & No entrega. & /20\% \\
+\hline
+\textbf{2. Transferencia de Calor (Convección)} & Cálculo preciso y bien presentado de \$Q_{conv}\$. & Cálculo correcto con error menor. & Cálculo con error significativo. & Cálculo incompleto o con error conceptual. & Cálculo incorrecto o ausente. & No entrega. & /20\% \\
+\hline
+\textbf{3. Transferencia de Calor (Radiación)} & Cálculo preciso y bien presentado de \$Q_{rad}\$. & Cálculo correcto con error menor. & Cálculo con error significativo. & Cálculo incompleto o con error conceptual. & Cálculo incorrecto o ausente. & No entrega. & /20\% \\
+\hline
+\textbf{4. Interpretación y Conclusión} & Análisis profundo y justificado, conclusión clara y recomendación pertinente. & Análisis adecuado, conclusión clara y recomendación relevante. & Análisis básico, conclusión aceptable, recomendación genérica. & Análisis superficial, conclusión vaga, recomendación poco clara. & Análisis incorrecto o ausente, sin conclusión ni recomendación. & No entrega. & /20\% \\
+\hline
+\textbf{5. Aspectos Formales y Presentación} & Presentación impecable, uso correcto de LaTeX, claridad y orden. & Presentación muy buena, pocos errores de formato o LaTeX. & Presentación aceptable, algunos errores de formato o LaTeX. & Presentación con deficiencias, errores frecuentes de formato o LaTeX. & Presentación desorganizada, muchos errores o ilegible. & No entrega. & /20\% \\
+\hline
+\textbf{Puntaje Total} & & & & & & & /100\% \\
+\hline
+\end{tabularx}
+
+\end{document}

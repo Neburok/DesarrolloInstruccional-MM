@@ -1,0 +1,138 @@
+# Lectura Fundamental: Mecanismos de Transferencia de Calor
+
+**Asignatura:** Termodinámica Automotriz
+**Unidad 4:** Procesos Termodinámicos y de Transferencia de Calor
+
+---
+
+### Objetivos de Aprendizaje
+
+Al finalizar esta lectura, serás capaz de:
+
+-   Definir los tres mecanismos de transferencia de calor: conducción, convección y radiación.
+-   Explicar la Ley de Fourier para la conducción de calor y las variables que la componen.
+-   Calcular la tasa de transferencia de calor por conducción a través de una pared plana.
+
+---
+
+### Introducción a la Transferencia de Calor
+
+Mientras que la termodinámica se ocupa de la cantidad total de calor transferida en un proceso, la **transferencia de calor** es la ciencia que se ocupa de la **velocidad** a la que se transfiere esa energía. En un motor, no solo importa cuánta energía se libera, sino cuán rápido se disipa para evitar el sobrecalentamiento.
+
+La energía térmica siempre fluye desde una región de mayor temperatura a una de menor temperatura. Existen tres mecanismos por los cuales este flujo puede ocurrir: conducción, convección y radiación.
+
+### Tema 1: Conducción
+
+La conducción es la transferencia de energía a través de la interacción directa entre las partículas de un material (átomos, moléculas). En los sólidos, como el bloque de un motor, el calor se transfiere por conducción desde la cámara de combustión hacia el exterior.
+
+#### Ley de Fourier de la Conducción de Calor
+
+La velocidad de la transferencia de calor por conducción ($Q_{cond}$) a través de una pared plana es descrita por la Ley de Fourier:
+
+$$ Q_{cond} = -k A \frac{dT}{dx} $$
+
+Donde:
+-   $Q_{cond}$: Tasa de transferencia de calor (en Watts, $W$).
+-   $k$: **Conductividad térmica** del material (en $W/m \cdot K$). Es una medida de la habilidad de un material para conducir calor. Los metales tienen una $k$ alta, mientras que los aislantes tienen una $k$ baja.
+-   $A$: Área de la superficie perpendicular a la transferencia de calor (en $m^2$).
+-   $\frac{dT}{dx}$: **Gradiente de temperatura**, es decir, el cambio de temperatura con respecto a la distancia (en $K/m$).
+
+El signo negativo indica que el calor fluye en la dirección de la temperatura decreciente.
+
+**Ejemplo de Aplicación:**
+
+La pared de un horno de acero ($k = 60 \, W/m \cdot K$) tiene un área de $1.5 \, m^2$ y un espesor de $0.02 \, m$. La temperatura de la cara interior es de $200^\circ C$ y la de la cara exterior es de $150^\circ C$. ¿Cuál es la tasa de pérdida de calor a través de la pared?
+
+**Solución:**
+Podemos aproximar el gradiente de temperatura como $\frac{\Delta T}{\Delta x}$:
+
+$$ Q_{cond} = k A \frac{T_{int} - T_{ext}}{\Delta x} = (60 \, W/m \cdot K)(1.5 \, m^2) \frac{(200 - 150) \, K}{0.02 \, m} $$
+
+$$ Q_{cond} = (90) \frac{50}{0.02} = 225,000 \, W = 225 \, kW $$
+
+La pérdida de calor a través de la pared del horno es de $225 \, kW$.
+
+---
+
+### Tema 2: Convección
+
+La convección es la transferencia de calor entre una superficie sólida y un fluido (líquido o gas) en movimiento. Es el mecanismo dominante en el enfriamiento de los motores, donde el refrigerante o el aire circulan para disipar el calor.
+
+#### Ley de Enfriamiento de Newton
+
+La tasa de transferencia de calor por convección ($Q_{conv}$) se describe por la Ley de Enfriamiento de Newton:
+
+$ Q_{conv} = h A (T_s - T_\infty) $
+
+Donde:
+-   $Q_{conv}$: Tasa de transferencia de calor (en Watts, $W$).
+-   $h$: **Coeficiente de transferencia de calor por convección** (en $W/m^2 \cdot K$). Depende de las propiedades del fluido, la geometría de la superficie y la velocidad del fluido.
+-   $A$: Área de la superficie de contacto entre el sólido y el fluido (en $m^2$).
+-   $T_s$: Temperatura de la superficie del sólido (en $K$ o $^\circ C$).
+-   $T_\infty$: Temperatura del fluido lejos de la superficie (en $K$ o $^\circ C$).
+
+La convección puede ser:
+-   **Natural (o libre):** El movimiento del fluido es causado por diferencias de densidad debido a cambios de temperatura (ej. aire caliente subiendo).
+-   **Forzada:** El movimiento del fluido es inducido por medios externos como un ventilador o una bomba (ej. el sistema de enfriamiento de un motor).
+
+**Ejemplo de Aplicación:**
+
+Un componente de motor con una superficie de $0.1 \, m^2$ está a $120^\circ C$ y se enfría por aire a $20^\circ C$. Si el coeficiente de transferencia de calor por convección es de $25 \, W/m^2 \cdot K$, ¿cuál es la tasa de transferencia de calor?
+
+**Solución:**
+
+$ Q_{conv} = (25 \, W/m^2 \cdot K)(0.1 \, m^2)(120 - 20) \, K $
+
+$ Q_{conv} = (2.5)(100) = 250 \, W $
+
+La tasa de transferencia de calor por convección es de $250 \, W$.
+
+---
+
+### Tema 3: Radiación
+
+La radiación es la transferencia de calor por medio de ondas electromagnéticas. A diferencia de la conducción y la convección, la radiación no requiere un medio material para propagarse y puede ocurrir en el vacío. Es el mecanismo por el cual sentimos el calor del sol o de un motor caliente sin tocarlo.
+
+#### Ley de Stefan-Boltzmann
+
+La tasa máxima de transferencia de calor por radiación ($Q_{rad}$) de una superficie se describe por la Ley de Stefan-Boltzmann:
+
+$ Q_{rad} = \epsilon \sigma A (T_s^4 - T_{alrededores}^4) $
+
+Donde:
+-   $Q_{rad}$: Tasa de transferencia de calor (en Watts, $W$).
+-   $\epsilon$: **Emisividad** de la superficie (adimensional, $0 \le \epsilon \le 1$). Es una medida de la capacidad de una superficie para emitir energía por radiación. Para un cuerpo negro ideal, $\epsilon = 1$.
+-   $\sigma$: **Constante de Stefan-Boltzmann** ($5.67 \times 10^{-8} \, W/m^2 \cdot K^4$).
+-   $A$: Área de la superficie (en $m^2$).
+-   $T_s$: Temperatura absoluta de la superficie (en $K$).
+-   $T_{alrededores}$: Temperatura absoluta de los alrededores (en $K$).
+
+Es crucial usar temperaturas absolutas (Kelvin) en esta ecuación, ya que la relación es a la cuarta potencia.
+
+**Ejemplo de Aplicación:**
+
+Una superficie de motor con una emisividad de $0.8$ y un área de $0.5 \, m^2$ está a $150^\circ C$. Los alrededores están a $25^\circ C$. ¿Cuál es la tasa de transferencia de calor por radiación?
+
+**Solución:**
+Primero, convertimos las temperaturas a Kelvin:
+$T_s = 150 + 273.15 = 423.15 \, K$
+$T_{alrededores} = 25 + 273.15 = 298.15 \, K$
+
+$ Q_{rad} = (0.8)(5.67 \times 10^{-8} \, W/m^2 \cdot K^4)(0.5 \, m^2) ((423.15 \, K)^4 - (298.15 \, K)^4) $
+
+$ Q_{rad} = (0.8)(5.67 \times 10^{-8})(0.5) (3.21 \times 10^9 - 7.89 \times 10^8) $
+
+$ Q_{rad} = (2.268 \times 10^{-8}) (2.421 \times 10^9) = 54.9 \, W $
+
+La tasa de transferencia de calor por radiación es de aproximadamente $54.9 \, W$.
+
+---
+
+### Resumen de Puntos Clave
+
+-   La **transferencia de calor** estudia la velocidad a la que la energía térmica se mueve.
+-   Existen tres mecanismos principales:
+    -   **Conducción:** Transferencia por contacto directo de partículas (Ley de Fourier).
+    -   **Convección:** Transferencia entre una superficie y un fluido en movimiento (Ley de Enfriamiento de Newton).
+    -   **Radiación:** Transferencia por ondas electromagnéticas, no requiere medio (Ley de Stefan-Boltzmann).
+-   En aplicaciones automotrices, los tres mecanismos son importantes para el diseño de sistemas de enfriamiento y gestión térmica.
