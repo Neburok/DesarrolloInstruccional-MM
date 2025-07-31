@@ -30,3 +30,12 @@ Este archivo sirve para registrar tareas importantes pero no urgentes, ideas de 
     6.  Eliminar la carpeta temporal con todos los archivos auxiliares (`.log`, `.aux`, etc.).
 - **Estado:** Pendiente.
 - **Prioridad:** Media-Baja (Mejora de flujo de trabajo).
+
+---
+
+## 2. Mantener la Organización de Carpetas
+
+- **Tarea:** Revisar periódicamente las carpetas de las unidades para eliminar archivos temporales o innecesarios (ej. `.aux`, `.log`, `.fdb_latexmk`, `.fls`).
+- **Acción:** Crear un script o definir un proceso manual para limpiar los directorios de trabajo y mantener solo los archivos fuente (`.md`, `.tex`) y los productos finales (`.pdf`).
+- **Estado:** Pendiente.
+- **Prioridad:** Baja (Buenas prácticas de organización).

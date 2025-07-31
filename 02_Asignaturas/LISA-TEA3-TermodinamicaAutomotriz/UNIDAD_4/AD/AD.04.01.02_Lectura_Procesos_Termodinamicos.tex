@@ -11,6 +11,10 @@
 \usepackage{multirow}
 \usepackage{array}
 
+% --- Configuración de Bibliografía con BibLaTeX y APA 7 ---
+\usepackage[style=apa]{biblatex}
+\addbibresource{bibliografia.bib}
+
 % --- Configuración de pgfplots ---
 \pgfplotsset{compat=1.16}
 
@@ -27,7 +31,7 @@ Esta lectura de apoyo complementa las sesiones presenciales del tema de \hl{Proc
 
 ¡Hola de nuevo! En nuestro viaje anterior, exploramos el Ciclo de Carnot, el modelo ideal de eficiencia. Ahora, vamos a dar un paso atrás para entender sus componentes básicos: los \hl{procesos termodinámicos}.
 
-Un \hl{proceso termodinámico} es cualquier transformación en la que un sistema (como un gas en un pistón) cambia de un estado a otro. Imagina que son los ``movimientos'' individuales que, combinados, crean el ``baile'' completo de un ciclo de motor o un refrigerador.
+Un \hl{proceso termodinámico} es cualquier transformación en la que un sistema (como un gas en un pistón) cambia de un estado a otro \parencite{cengel2002}. Imagina que son los ``movimientos'' individuales que, combinados, crean el ``baile'' completo de un ciclo de motor o un refrigerador.
 
 Nos centraremos en cuatro procesos idealizados que son la base de casi todos los ciclos termodinámicos: \textbf{isotérmico}, \textbf{isobárico}, \textbf{isocórico} y \textbf{adiabático}. ¡Comencemos!
 
@@ -51,7 +55,7 @@ Este proceso debe ser muy lento (\hl{cuasiestático}) para que el calor tenga ti
 
 \subsection*{Primera Ley de la Termodinámica}
 
-$\Delta U = Q - W$: Para un gas ideal, la energía interna ($\Delta U$) solo depende de la temperatura. Si la temperatura es constante, $\Delta U = 0$. Por lo tanto, la ley se simplifica a:
+$\Delta U = Q - W$: Para un gas ideal, la energía interna ($\Delta U$) solo depende de la temperatura \parencite{wark2001}. Si la temperatura es constante, $\Delta U = 0$. Por lo tanto, la ley se simplifica a:
 
 $$Q = W$$
 
@@ -107,7 +111,7 @@ El sistema está en un contenedor rígido. Como las paredes no se mueven, el gas
 
 \subsection*{Primera Ley de la Termodinámica}
 
-Como el cambio de volumen es cero, el trabajo ($W = P \cdot \Delta V$) también es cero. La ley se simplifica drásticamente:
+Como el cambio de volumen es cero, el trabajo ($W = P \cdot \Delta V$) también es cero \parencite{manrique2001}. La ley se simplifica drásticamente:
 
 $$\Delta U = Q$$
 
@@ -121,7 +125,7 @@ Se representa como una \hl{línea vertical}. La presión cambia, pero el volumen
 
 \section*{4. PROCESO ADIABÁTICO: SIN INTERCAMBIO DE CALOR}
 
-Un \hl{proceso adiabático} es aquel en el que no hay transferencia de calor entre el sistema y su entorno ($Q = 0$).
+Un \hl{proceso adiabático} es aquel en el que no hay transferencia de calor entre el sistema y su entorno ($Q = 0$) \parencite{wiki:proceso_adiabatico}.
 
 \subsection*{¿Qué sucede?}
 
@@ -187,7 +191,7 @@ Se representa como una curva más pronunciada que una isoterma. Para la misma ex
 
 \section*{CONCLUSIÓN: EL ALFABETO DE LA ENERGÍA}
 
-Estos cuatro procesos son como el \hl{alfabeto de la termodinámica}. Al combinarlos de diferentes maneras, podemos describir y analizar los ciclos que impulsan nuestro mundo, desde los \textbf{motores de los coches} (ciclos Otto y Diesel) hasta las \textbf{centrales eléctricas} (ciclo Rankine) y los \textbf{sistemas de refrigeración}. 
+Estos cuatro procesos son como el \hl{alfabeto de la termodinámica} \parencite{wiki:termodinamica}. Al combinarlos de diferentes maneras, podemos describir y analizar los ciclos que impulsan nuestro mundo, desde los \textbf{motores de los coches} (ciclos Otto y Diesel) hasta las \textbf{centrales eléctricas} (ciclo Rankine) y los \textbf{sistemas de refrigeración}. 
 
 Comprender cómo se comporta la energía en cada uno de estos pasos es fundamental para diseñar sistemas más eficientes y sostenibles.
 
@@ -201,5 +205,11 @@ La comprensión profunda de estos procesos fundamentales permite:
 \end{itemize}
 
 En las siguientes sesiones, aplicaremos estos conceptos fundamentales al análisis detallado de ciclos termodinámicos específicos utilizados en sistemas automotrices.
+
+\vspace{10mm}
+\hrule
+
+\section*{Referencias}
+\printbibliography
 
 \end{document}

@@ -5,10 +5,6 @@
 \usepackage{tikz}
 \usepackage{amsmath}
 
-% --- Configuración de Bibliografía con BibLaTeX y APA 7 ---
-\usepackage[style=apa]{biblatex}
-\addbibresource{bibliografia.bib} % Ruta relativa al archivo .bib
-
 \begin{document}
 
 % --- Título de la Lectura ---
@@ -34,15 +30,15 @@ Al finalizar esta lectura, serás capaz de:
 
 \section*{Introducción a los Ciclos Termodinámicos}
 
-Un \hl{ciclo termodinámico} es una secuencia de procesos que comienza y termina en el mismo estado, permitiendo la conversión continua de calor en trabajo mecánico. Para analizarlos, usamos diagramas P-V, donde el área encerrada por el ciclo representa el trabajo neto ($W_{neto}$) realizado \parencite{cengel2002}.
+Un \hl{ciclo termodinámico} es una secuencia de procesos que comienza y termina en el mismo estado, permitiendo la conversión continua de calor en trabajo mecánico. Para analizarlos, usamos diagramas P-V, donde el área encerrada por el ciclo representa el trabajo neto ($W_{neto}$) realizado.
 
 \section*{El Ciclo de Carnot: El Límite de la Eficiencia}
 
-El \hl{Ciclo de Carnot} es un ciclo teórico que establece el límite máximo de eficiencia para cualquier motor térmico. Opera entre una fuente de calor a alta temperatura ($T_H$) y un sumidero de calor a baja temperatura ($T_L$) a través de cuatro procesos reversibles: dos isotérmicos y dos adiabáticos. Como se muestra en la Figura~\ref{fig:carnot_cycle}, estos procesos forman un ciclo cerrado en el diagrama P-V.
+El \hl{Ciclo de Carnot} es un ciclo teórico que establece el límite máximo de eficiencia para cualquier motor térmico. Opera entre una fuente de calor a alta temperatura ($T_H$) y un sumidero de calor a baja temperatura ($T_L$) a través de cuatro procesos reversibles: dos isotérmicos y dos adiabáticos.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.6\textwidth]{../_RECURSOS/img/diagrama_pv_ciclo_carnot.png}
+    \includegraphics[width=0.6\textwidth]{img/diagrama_pv_ciclo_carnot.png}
     \caption{Diagrama P-V del Ciclo de Carnot.}
     \label{fig:carnot_cycle}
 \end{figure}
@@ -50,7 +46,7 @@ El \hl{Ciclo de Carnot} es un ciclo teórico que establece el límite máximo de
 
 La eficiencia térmica del Ciclo de Carnot depende únicamente de estas temperaturas absolutas:
 
-$ \eta_{th,Carnot} = 1 - \frac{T_L}{T_H} $
+$$ \eta_{th,Carnot} = 1 - \frac{T_L}{T_H} $$
 
 \textbf{Ejemplo:} Un motor de Carnot que opera entre $600 \, K$ y $300 \, K$ tiene una eficiencia máxima del 50\%.
 
@@ -58,30 +54,30 @@ $ \eta_{th,Carnot} = 1 - \frac{T_L}{T_H} $
 
 \subsection*{Ciclo de Otto (Motores de Gasolina)}
 
-Este ciclo, representado en la Figura~\ref{fig:otto_cycle}, modela los motores de encendido por chispa. Su eficiencia depende de la relación de compresión ($r$):
+Este ciclo modela los motores de encendido por chispa. Su eficiencia depende de la relación de compresión ($r$):
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.6\textwidth]{../_RECURSOS/img/diagrama_pv_ciclo_otto.png}
+    \includegraphics[width=0.6\textwidth]{img/diagrama_pv_ciclo_otto.png}
     \caption{Diagrama P-V del Ciclo de Otto.}
     \label{fig:otto_cycle}
 \end{figure}
 
 
-$ \eta_{th,Otto} = 1 - \frac{1}{r^{k-1}} $
+$$ \eta_{th,Otto} = 1 - \frac{1}{r^{k-1}} $$
 
 \subsection*{Ciclo de Diesel (Motores Diésel)}
 
-Este ciclo (ver Figura~\ref{fig:diesel_cycle}) modela los motores de encendido por compresión. La adición de calor ocurre a presión constante. Su eficiencia depende de la relación de compresión ($r$) y de la relación de corte de inyección ($r_c$):
+Este ciclo modela los motores de encendido por compresión. La adición de calor ocurre a presión constante. Su eficiencia depende de la relación de compresión ($r$) y de la relación de corte de inyección ($r_c$):
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.6\textwidth]{../_RECURSOS/img/diagrama_pv_ciclo_diesel.png}
+    \includegraphics[width=0.6\textwidth]{img/diagrama_pv_ciclo_diesel.png}
     \caption{Diagrama P-V del Ciclo de Diesel.}
     \label{fig:diesel_cycle}
 \end{figure}
 
-$   \eta_{th,Diesel} = 1 - \frac{1}{r^{k-1}} \left[ \frac{r_c^k - 1}{k(r_c - 1)} \right]  $
+$$   \eta_{th,Diesel} = 1 - \frac{1}{r^{k-1}} \left[ \frac{r_c^k - 1}{k(r_c - 1)} \right]  $$
 
 \vspace{5mm}
 \hrule
@@ -96,11 +92,5 @@ $   \eta_{th,Diesel} = 1 - \frac{1}{r^{k-1}} \left[ \frac{r_c^k - 1}{k(r_c - 1)}
     \item El Ciclo de Diesel modela los motores diésel, con adición de calor a presión constante.
     \item La eficiencia de los motores reales siempre será menor que la de los ciclos ideales correspondientes.
 \end{itemize}
-
-\vspace{10mm} % Espacio antes de la bibliografía
-\hrule
-
-\section*{Referencias}
-\printbibliography
 
 \end{document}

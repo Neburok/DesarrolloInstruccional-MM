@@ -1,8 +1,9 @@
 \documentclass{article}
 
 % --- Cargar la plantilla de estilo UTP ---
-\usepackage{_PLANTILLAS/TEMPLATE_LECTURA_PDF/utp-doc}
+\usepackage{utp-doc}
 \usepackage{amsmath}
+\usepackage{tikz}
 \usepackage{enumitem}
 \usepackage{tabularx}
 
@@ -74,18 +75,18 @@ Se ha realizado una prueba de rendimiento y gestión térmica en un motor de gas
 \begin{itemize}
     \item \textbf{Datos del Ciclo de Operación (Motor de Gasolina - Ciclo Otto Idealizado):}
     \begin{itemize}
-        \item Relación de Compresión (\$r\$): 9.5:1
-        \item Relación de calores específicos (\$k\$): 1.4
-        \item Calor suministrado por ciclo (\$Q_{in}\$): \$1500 \, kJ/kg\$
-        \item Masa de mezcla aire-combustible por ciclo: \$0.004 \, kg\$
+        \item Relación de Compresión ($r$): 9.5:1
+        \item Relación de calores específicos ($k$): 1.4
+        \item Calor suministrado por ciclo ($Q_{in}$): $1500 \, kJ/kg$
+        \item Masa de mezcla aire-combustible por ciclo: $0.004 \, kg$
     \end{itemize}
     \item \textbf{Datos del Sistema de Enfriamiento (Bloque del Motor):}
     \begin{itemize}
-        \item Temperatura superficial exterior del bloque (\$T_{superficie}\$): \$105^\circ C\$
-        \item Temperatura del aire ambiente (\$T_{ambiente}\$): \$28^\circ C\$
-        \item Área superficial expuesta del bloque (\$A_{bloque}\$): \$0.55 \, m^2\$
-        \item Coeficiente de transferencia de calor por convección (\$h_{aire}\$): \$18 \, W/m^2 \cdot K\$
-        \item Emisividad del bloque del motor (\$\epsilon\$): \$0.8\$
+        \item Temperatura superficial exterior del bloque ($T_{superficie}$): $105^\circ C$
+        \item Temperatura del aire ambiente ($T_{ambiente}$): $28^\circ C$
+        \item Área superficial expuesta del bloque ($A_{bloque}$): $0.55 \, m^2$
+        \item Coeficiente de transferencia de calor por convección ($h_{aire}$): $18 \, W/m^2 \cdot K$
+        \item Emisividad del bloque del motor ($\epsilon$): $0.8$
     \end{itemize}
 \end{itemize}
 
@@ -94,8 +95,8 @@ Se ha realizado una prueba de rendimiento y gestión térmica en un motor de gas
 \begin{enumerate}
     \item \textbf{Análisis del Ciclo Otto:}
     \begin{itemize}
-        \item Calcule la eficiencia térmica ideal del motor (\$\eta_{th,Otto}\$). (20\%)
-        \item Determine el trabajo neto producido por ciclo (\$W_{neto}\$) y el calor rechazado por ciclo (\$Q_{rechazado}\$). (20\%)
+        \item Calcule la eficiencia térmica ideal del motor ($\\eta_{th,Otto}$). (20\\%)
+        \\item Determine el trabajo neto producido por ciclo ($W_{neto}$) y el calor rechazado por ciclo ($Q_{rechazado}$). (20\\%)
     \end{itemize}
     \item \textbf{Análisis de Transferencia de Calor:}
     \begin{itemize}
@@ -113,6 +114,7 @@ Se ha realizado una prueba de rendimiento y gestión térmica en un motor de gas
 \hrule
 \vspace{5mm}
 
+\newpage
 \section*{Rúbrica de Evaluación}
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|}
@@ -121,9 +123,9 @@ Se ha realizado una prueba de rendimiento y gestión térmica en un motor de gas
 \hline
 \textbf{1. Análisis del Ciclo Otto} & Cálculos precisos y completos de eficiencia, trabajo neto y calor rechazado. & Cálculos correctos con errores menores o alguna omisión. & Cálculos con errores significativos en una sección. & Cálculos incompletos o con errores conceptuales. & Cálculos incorrectos o ausentes. & No entrega. & /20\% \\
 \hline
-\textbf{2. Transferencia de Calor (Convección)} & Cálculo preciso y bien presentado de \$Q_{conv}\$. & Cálculo correcto con error menor. & Cálculo con error significativo. & Cálculo incompleto o con error conceptual. & Cálculo incorrecto o ausente. & No entrega. & /20\% \\
+\textbf{2. Transferencia de Calor (Convección)} & Cálculo preciso y bien presentado de $Q_{conv}$. & Cálculo correcto con error menor. & Cálculo con error significativo. & Cálculo incompleto o con error conceptual. & Cálculo incorrecto o ausente. & No entrega. & /20\% \\
 \hline
-\textbf{3. Transferencia de Calor (Radiación)} & Cálculo preciso y bien presentado de \$Q_{rad}\$. & Cálculo correcto con error menor. & Cálculo con error significativo. & Cálculo incompleto o con error conceptual. & Cálculo incorrecto o ausente. & No entrega. & /20\% \\
+\textbf{3. Transferencia de Calor (Radiación)} & Cálculo preciso y bien presentado de $Q_{rad}$. & Cálculo correcto con error menor. & Cálculo con error significativo. & Cálculo incompleto o con error conceptual. & Cálculo incorrecto o ausente. & No entrega. & /20\% \\
 \hline
 \textbf{4. Interpretación y Conclusión} & Análisis profundo y justificado, conclusión clara y recomendación pertinente. & Análisis adecuado, conclusión clara y recomendación relevante. & Análisis básico, conclusión aceptable, recomendación genérica. & Análisis superficial, conclusión vaga, recomendación poco clara. & Análisis incorrecto o ausente, sin conclusión ni recomendación. & No entrega. & /20\% \\
 \hline
