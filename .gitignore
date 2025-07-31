@@ -1,0 +1,35 @@
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Directorios y configuraciones de editores de código
+.vscode/
+.idea/
+.obsidian/
+
+# Archivos auxiliares de LaTeX
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# Archivos de Python
+__pycache__/
+*.pyc
+.env
+venv/
+env/
+
+# Archivos de R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Dependencias de Node.js (por si se usa en el futuro)
+node_modules/
+npm-debug.log
