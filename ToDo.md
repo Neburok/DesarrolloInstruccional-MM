@@ -18,7 +18,9 @@ Este archivo sirve para registrar tareas importantes pero no urgentes, ideas de 
 
 ---
 
-## 1. Automatizar la Compilación de Documentos LaTeX
+## Mejoras de Flujo de Trabajo y Documentación
+
+### 1. Automatizar la Compilación de Documentos LaTeX
 
 - **Tarea:** Crear un script (`compilador.bat` o similar) que automatice el proceso de generación de PDFs a partir de los archivos `.tex`.
 - **Descripción del Proceso a Automatizar:**
@@ -31,9 +33,19 @@ Este archivo sirve para registrar tareas importantes pero no urgentes, ideas de 
 - **Estado:** Pendiente.
 - **Prioridad:** Media-Baja (Mejora de flujo de trabajo).
 
----
+### 2. Documentar Procesos Establecidos
+- **Tarea:** Crear y mantener documentos (`.md`) que formalicen los flujos de trabajo clave del proyecto (ej. la "Guía Metodológica para AVS").
+- **Acción:** Ubicar estos documentos en la carpeta `_DOCUMENTACION/`.
+- **Estado:** En progreso (creada la primera versión para AVS).
+- **Prioridad:** Media (Fundamental para la escalabilidad y la incorporación de nuevos colaboradores).
 
-## 2. Mantener la Organización de Carpetas
+### 3. Documentar Casos de Éxito
+- **Tarea:** Al finalizar un hito importante (ej. completar todos los materiales de una unidad), crear un breve reporte o "Post-mortem" del proceso.
+- **Acción:** El reporte debe incluir: qué funcionó bien, qué desafíos se encontraron y qué lecciones se aprendieron. Se guardará en una subcarpeta dentro de `_DOCUMENTACION/CasosDeExito/`.
+- **Estado:** Pendiente.
+- **Prioridad:** Baja (Valioso para la mejora continua y el registro histórico).
+
+### 4. Mantener la Organización de Carpetas
 
 - **Tarea:** Revisar periódicamente las carpetas de las unidades para eliminar archivos temporales o innecesarios (ej. `.aux`, `.log`, `.fdb_latexmk`, `.fls`).
 - **Acción:** Crear un script o definir un proceso manual para limpiar los directorios de trabajo y mantener solo los archivos fuente (`.md`, `.tex`) y los productos finales (`.pdf`).
