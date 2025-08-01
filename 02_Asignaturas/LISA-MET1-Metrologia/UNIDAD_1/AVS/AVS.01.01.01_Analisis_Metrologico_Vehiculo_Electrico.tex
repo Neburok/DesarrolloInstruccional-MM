@@ -1,0 +1,338 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{geometry}
+\usepackage{utp-doc}
+
+%\title{AVS.01.01.01: Análisis Metrológico de un Vehículo Eléctrico Compacto}
+%\author{Profesor [Su Nombre]}
+%\date{\today}
+
+\begin{document}
+
+%
+% --- Título de la Lectura ---
+\practicatitle{AVS.01.01.01: Análisis Metrológico de un Vehículo Eléctrico Compacto}
+
+% --- Metadatos de la Actividad ---
+\textbf{Asignatura:} Metrología \\
+\textbf{Unidad I:} - Introducción a la Metrología 
+
+\vspace{5mm}
+\hrule
+\vspace{5mm}
+
+%\maketitle
+
+\section*{Introducción}
+
+En el contexto del \hl{desarrollo de vehículos eléctricos}, la \hl{metrología} juega un papel fundamental en el aseguramiento de la \hl{calidad, precisión y seguridad} de todos los componentes y sistemas. La correcta aplicación de \hl{sistemas de unidades, conversiones de magnitudes} y el uso de \hl{múltiplos y submúltiplos} es esencial para garantizar que las especificaciones técnicas cumplan con los \hl{estándares internacionales} de la industria automotriz.
+
+El presente caso de estudio permite al estudiante \hl{aplicar los conceptos fundamentales de metrología} en un escenario real de la industria automotriz, donde deberá \hl{resolver problemas prácticos} relacionados con conversiones de unidades, análisis de especificaciones técnicas y toma de decisiones basadas en \hl{mediciones precisas} para el desarrollo de un vehículo eléctrico compacto.
+
+\section*{Objetivo General}
+
+Aplicar los \hl{conceptos fundamentales de metrología} incluyendo \hl{sistemas de unidades, múltiplos, submúltiplos y conversiones} en el análisis de especificaciones técnicas de un vehículo eléctrico compacto, para \hl{garantizar la precisión y calidad} en los procesos de diseño y fabricación, cumpliendo con los \hl{estándares de la industria automotriz}.
+
+\section*{Actividad Previa al Desarrollo del Caso}
+
+Antes de desarrollar el caso de estudio, revisa el \hl{material teórico} proporcionado y contesta el siguiente \hl{cuestionario}. Esto te ayudará a contextualizar los conceptos y a aprovechar mejor el análisis del caso.
+
+\begin{enumerate}
+    \item \textbf{¿Qué es la metrología y por qué es fundamental en la industria automotriz?}
+    \item \textbf{Menciona las 7 magnitudes fundamentales del Sistema Internacional de Unidades (SI) y su aplicación en vehículos eléctricos.}
+    \item \textbf{Explique la diferencia entre precisión y exactitud en las mediciones, dando un ejemplo automotriz.}
+    \item \textbf{¿Por qué es importante el uso correcto de múltiplos y submúltiplos en las especificaciones técnicas automotrices?}
+    \item \textbf{Mencione tres errores comunes en conversiones de unidades que podrían afectar la seguridad de un vehículo.}
+\end{enumerate}
+
+\section*{Descripción del Caso de Estudio}
+
+\subsection*{Escenario}
+
+Tu equipo de ingeniería ha sido contratado por \textbf{``EcoMotion México''}, una startup mexicana especializada en el desarrollo de vehículos eléctricos urbanos. La empresa está desarrollando su primer modelo: el \textbf{``UrbanE''}, un vehículo eléctrico compacto diseñado para la movilidad urbana sostenible en ciudades mexicanas.
+
+\subsection*{Situación Problemática}
+
+Durante la fase de diseño y especificación técnica del UrbanE, el equipo de ingeniería ha recibido información técnica de múltiples proveedores internacionales que utilizan \hl{diferentes sistemas de unidades}. Además, se han detectado \hl{inconsistencias en las especificaciones} que podrían comprometer la seguridad, eficiencia y cumplimiento normativo del vehículo.
+
+\subsection*{Información Técnica Disponible}
+
+\subsubsection*{Especificaciones del Motor Eléctrico (Proveedor Alemán)}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Característica} & \textbf{Valor} \\
+\hline
+Potencia máxima & $75 \, \text{kW}$ \\
+Torque máximo & $200 \, \text{N} \cdot \text{m}$ \\
+Velocidad máxima & $8,500 \, \text{rpm}$ \\
+Eficiencia & $94\%$ \\
+Peso & $45 \, \text{kg}$ \\
+\hline
+\end{tabular}
+
+\subsubsection*{Especificaciones de la Batería (Proveedor Chino)}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Característica} & \textbf{Valor} \\
+\hline
+Capacidad & $40 \, \text{kWh}$ \\
+Voltaje nominal & $400 \, \text{V}$ \\
+Corriente máxima & $150 \, \text{A}$ \\
+Peso & $280 \, \text{kg}$ \\
+Dimensiones & $1,200 \, \text{mm} \times 800 \, \text{mm} \times 150 \, \text{mm}$ \\
+\hline
+\end{tabular}
+
+\subsubsection*{Especificaciones del Chasis (Proveedor Estadounidense)}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Característica} & \textbf{Valor} \\
+\hline
+Longitud total & $12.5 \, \text{ft}$ \\
+Ancho & $5.8 \, \text{ft}$ \\
+Altura & $5.2 \, \text{ft}$ \\
+Distancia entre ejes & $8.2 \, \text{ft}$ \\
+Peso estructura & $1,200 \, \text{lbs}$ \\
+Capacidad de carga & $800 \, \text{lbs}$ \\
+\hline
+\end{tabular}
+
+\subsubsection*{Especificaciones de Neumáticos (Proveedor Europeo)}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Característica} & \textbf{Valor} \\
+\hline
+Medida & 185/65 R15 \\
+Presión recomendada & $2.2 \, \text{bar}$ \\
+Carga máxima por neumático & $475 \, \text{kg}$ \\
+Velocidad máxima & $180 \, \text{km/h}$ \\
+\hline
+\end{tabular}
+
+\subsubsection*{Requerimientos del Cliente}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Requerimiento} & \textbf{Valor} \\
+\hline
+Velocidad máxima del vehículo & $120 \, \text{km/h}$ \\
+Autonomía mínima & $300 \, \text{km}$ \\
+Capacidad de pasajeros & 4 personas ($70 \, \text{kg}$ promedio c/u) \\
+Tiempo de carga & máximo 6 horas (carga estándar) \\
+Cumplimiento normativo & NOM-194-SCFI \\
+\hline
+\end{tabular}
+
+\section*{Desarrollo del Caso de Estudio}
+
+\subsection*{Fase 1: Análisis y Conversión de Unidades (40 puntos)}
+
+\subsubsection*{1.1 Conversión de Especificaciones del Chasis}
+Convierte todas las medidas del chasis del sistema imperial al Sistema Internacional (SI):
+\begin{enumerate}
+    \item \textbf{Dimensiones principales} (longitud, ancho, altura, distancia entre ejes) en metros ($m$).
+    \item \textbf{Pesos} (estructura y capacidad de carga) en kilogramos ($kg$).
+    \item \textbf{Crea una tabla comparativa} con las medidas originales y convertidas.
+\end{enumerate}
+
+\subsubsection*{1.2 Análisis de Compatibilidad de Neumáticos}
+Analiza la compatibilidad de los neumáticos con las especificaciones del vehículo:
+\begin{enumerate}
+    \item Convierte la \textbf{presión recomendada} de bar a Pascales ($\text{Pa}$) y libras por pulgada cuadrada ($\text{psi}$).
+    \item Verifica si la \textbf{carga máxima por neumático} es suficiente para el peso total del vehículo.
+    \item Compara la \textbf{velocidad máxima} del neumático con los requerimientos del cliente.
+\end{enumerate}
+
+\subsection*{Fase 2: Cálculos de Rendimiento y Eficiencia (40 puntos)}
+
+\subsubsection*{2.1 Análisis Energético}
+Realiza los siguientes cálculos energéticos:
+\begin{enumerate}
+    \item \textbf{Densidad energética} de la batería ($\text{Wh/kg}$).
+    \item \textbf{Consumo energético} estimado por kilómetro ($\text{kWh/100km}$).
+    \item \textbf{Autonomía teórica} basada en la capacidad de la batería.
+    \item \textbf{Tiempo de carga} a diferentes potencias: $3.3 \, \text{kW}$, $7.4 \, \text{kW}$, $22 \, \text{kW}$.
+\end{enumerate}
+
+\subsubsection*{2.2 Análisis de Potencia y Torque}
+Calcula y analiza:
+\begin{enumerate}
+    \item \textbf{Potencia específica} del motor ($\text{kW/kg}$).
+    \item \textbf{Relación potencia/masa} del vehículo completo.
+    \item \textbf{Torque en las ruedas} considerando una reducción típica de $9:1$.
+    \item \textbf{Análisis de Desempeño Teórico:} Con base en la relación potencia/masa calculada, investigue si el valor se encuentra dentro del rango típico para vehículos eléctricos compactos de uso urbano. Justifique su respuesta.
+\end{enumerate}
+
+\subsection*{Fase 3: Identificación y Resolución de Problemas (10 puntos)}
+
+\subsubsection*{3.1 Detección de Inconsistencias}
+Identifica y analiza posibles problemas:
+\begin{enumerate}
+    \item \textbf{Incompatibilidades} entre especificaciones de diferentes proveedores.
+    \item \textbf{Errores potenciales} en conversiones de unidades.
+    \item \textbf{Riesgos de seguridad} derivados de especificaciones incorrectas.
+\end{enumerate}
+
+\subsubsection*{3.2 Propuestas de Solución}
+Desarrolla soluciones técnicas:
+\begin{enumerate}
+    \item \textbf{Recomendaciones} para resolver inconsistencias encontradas.
+    \item \textbf{Especificaciones corregidas} para proveedores.
+    \item \textbf{Protocolo de verificación} metrológica para futuros proyectos.
+\end{enumerate}
+
+\subsection*{Fase 4: Síntesis y Recomendaciones (10 puntos)}
+
+\subsubsection*{4.1 Informe Ejecutivo}
+Elabora un resumen ejecutivo que incluya:
+\begin{enumerate}
+    \item \textbf{Viabilidad técnica} del proyecto UrbanE.
+    \item \textbf{Principales hallazgos} del análisis metrológico.
+    \item \textbf{Recomendaciones estratégicas} para la empresa EcoMotion México.
+\end{enumerate}
+
+\vspace{9cm}
+
+
+
+
+\section*{Hoja de Trabajo (Sugerida)}
+
+A continuación, se presenta una tabla sugerida para organizar los resultados obtenidos en cada fase del caso de estudio. Utilizarla facilitará la estructuración de su reporte.
+
+\subsection*{Fase 1: Análisis y Conversión de Unidades}
+
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Concepto} & \textbf{Valor Original} & \textbf{Resultado (SI)} & \textbf{Unidades} \\
+\hline
+Longitud total del chasis & $12.5 \, \text{ft}$ & & m \\
+Ancho del chasis & $5.8 \, \text{ft}$ & & m \\
+Altura del chasis & $5.2 \, \text{ft}$ & & m \\
+Distancia entre ejes & $8.2 \, \text{ft}$ & & m \\
+\hline
+Peso de la estructura & $1,200 \, \text{lbs}$ & & kg \\
+Capacidad de carga & $800 \, \text{lbs}$ & & kg \\
+\hline
+Presión de neumáticos & $2.2 \, \text{bar}$ & & Pa \\
+Presión de neumáticos & $2.2 \, \text{bar}$ & & psi \\
+\hline
+\end{tabular}
+
+\vspace{5mm}
+\textbf{Análisis de Compatibilidad de Neumáticos:}\vspace{2mm}
+
+\textit{¿La carga máxima por neumático es suficiente? (Sí/No y justificación)}
+
+\hrulefill
+
+\vspace{5mm}
+\textit{¿La velocidad máxima del neumático es adecuada? (Sí/No y justificación)}
+
+\hrulefill
+
+\subsection*{Fase 2: Cálculos de Rendimiento y Eficiencia}
+
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Cálculo Realizado} & \textbf{Resultado} & \textbf{Unidades} \\
+\hline
+Densidad energética de la batería & & Wh/kg \\
+Consumo energético estimado & & kWh/100km \\
+Autonomía teórica & & km \\
+\hline
+Tiempo de carga (3.3 kW) & & horas \\
+Tiempo de carga (7.4 kW) & & horas \\
+Tiempo de carga (22 kW) & & horas \\
+\hline
+Potencia específica del motor & & kW/kg \\
+Relación potencia/masa & & W/kg \\
+Torque en las ruedas & & N m \\
+\hline
+\end{tabular}
+
+\vspace{5mm}
+
+\textbf{Análisis de Desempeño Teórico:}\vspace{2mm}
+
+\textit{Con base en la relación potencia/masa, ¿el valor es típico para un vehículo urbano? Justifique.}
+
+\hrulefill
+
+\subsection*{Fase 3 y 4: Análisis y Recomendaciones}
+
+\subsubsection*{3.1 Incompatibilidades y Riesgos Detectados}
+\textit{Enumere y describa las incompatibilidades o riesgos encontrados.}
+
+\hrulefill
+
+\subsubsection*{3.2 Propuestas de Solución}
+\textit{Describa las recomendaciones técnicas para resolver las inconsistencias.}
+
+\hrulefill
+
+\subsubsection*{4.1 Informe Ejecutivo}
+\textit{Redacte aquí el resumen ejecutivo con la viabilidad, hallazgos y recomendaciones.}
+
+%\vspace{4cm}
+\hrulefill
+
+\section*{Forma de Entrega del Trabajo}
+
+El estudiante deberá entregar un \hl{único archivo en formato PDF} (`.pdf`) que corresponde al reporte técnico del caso de estudio. El documento debe ser claro, ordenado y contener los siguientes elementos:
+
+\subsection*{1. Datos Generales (Portada)}
+\begin{itemize}
+    \item Nombre completo del estudiante y matrícula.
+    \item Asignatura: Metrología.
+    \item Nombre de la actividad: `AVS.01.01.01: Análisis Metrológico de un Vehículo Eléctrico Compacto`.
+    \item Nombre del docente.
+    \item Fecha de elaboración.
+\end{itemize}
+
+\subsection*{2. Cuestionario Previo}
+Respuestas claras y bien fundamentadas a las 5 preguntas de la sección ``ACTIVIDAD PREVIA AL DESARROLLO DEL CASO''.
+
+\subsection*{3. Desarrollo del Caso de Estudio}
+\begin{itemize}
+    \item Fase 1: Análisis y Conversión de Unidades.
+    \item Fase 2: Cálculos de Rendimiento y Eficiencia.
+    \item Fase 3: Identificación y Resolución de Problemas.
+    \item Fase 4: Síntesis y Recomendaciones.
+\end{itemize}
+
+\subsection*{4. Conclusiones y Bibliografía}
+\begin{itemize}
+    \item \textbf{Conclusiones:} Reflexión personal y técnica sobre la importancia de la metrología en el proyecto (mínimo 5 renglones).
+    \item \textbf{Bibliografía:} Incluir al menos dos fuentes de consulta en formato APA.
+\end{itemize}
+
+\section*{Recursos de Apoyo}
+
+\subsection*{Tablas de Conversión Requeridas}
+\begin{itemize}
+    \item Sistema Imperial a Sistema Internacional
+    \item Múltiplos y submúltiplos del SI
+    \item Conversiones energéticas ($\text{kWh}$, $\text{J}$, $\text{cal}$)
+    \item Conversiones de presión ($\text{bar}$, $\text{Pa}$, $\text{psi}$)
+\end{itemize}
+
+\subsection*{Fórmulas Básicas}
+\begin{itemize}
+    \item Densidad energética: $E/m$ ($\text{Wh/kg}$)
+    \item Potencia específica: $P/m$ ($\text{kW/kg}$)
+    \item Eficiencia: $(\text{Energía útil} / \text{Energía total}) \times 100\%$
+    \item Autonomía teórica: Capacidad batería / Consumo promedio
+\end{itemize}
+
+\subsection*{Referencias Técnicas Sugeridas}
+\begin{itemize}
+    \item Normas mexicanas NOM aplicables a vehículos eléctricos
+    \item Estándares internacionales ISO para metrología automotriz
+    \item Especificaciones técnicas de vehículos eléctricos comerciales
+\end{itemize}
+
+\end{document}
