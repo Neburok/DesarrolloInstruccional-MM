@@ -1,0 +1,450 @@
+% --- Lectura de Apoyo: Ciclos Termodinámicos en Sistemas Automotrices ---
+\documentclass{article}
+
+% --- Cargar la plantilla de estilo UTP ---
+\usepackage{utp-doc}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{pgfplots}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+
+% --- Configuración de pgfplots ---
+\pgfplotsset{compat=1.16}
+
+\begin{document}
+
+% --- Usar el comando personalizado para el título ---
+\practicatitle{Lectura de Apoyo: ``Ciclos Termodinámicos en Sistemas Automotrices''}
+
+Esta lectura de apoyo complementa las sesiones presenciales del tema de \hl{Ciclos Termodinámicos} correspondiente a la \textbf{Unidad IV} de la asignatura E-TEA-3. Su objetivo es proporcionar bases teóricas sólidas para comprender el funcionamiento de \hl{motores de combustión interna} y su \hl{análisis termodinámico}.
+
+\vspace{5mm}
+
+\section*{INTRODUCCIÓN}
+
+Los \hl{ciclos termodinámicos} constituyen la base fundamental para comprender el funcionamiento de los \hl{motores de combustión interna} utilizados en la industria automotriz. Estos ciclos describen las transformaciones energéticas que ocurren en el interior de los motores, permitiendo convertir la \hl{energía química} del combustible en \hl{trabajo mecánico útil}.
+
+En el contexto de la \hl{ingeniería automotriz}, el dominio de estos conceptos es esencial para:
+\begin{itemize}
+    \item Optimizar el \hl{rendimiento} de los motores
+    \item Reducir el \hl{consumo de combustible}
+    \item Minimizar las \hl{emisiones contaminantes}
+    \item Mejorar la \hl{durabilidad} de los componentes
+\end{itemize}
+
+\vspace{5mm}
+
+\section*{CONCEPTOS FUNDAMENTALES}
+
+\subsection*{¿Qué es un Ciclo Termodinámico?}
+
+Un \hl{ciclo termodinámico} es una secuencia de \textbf{procesos} que experimenta un fluido de trabajo (generalmente aire o mezcla aire-combustible) y que lo lleva desde un estado inicial, a través de varios estados intermedios, hasta regresar exactamente al estado inicial.
+
+\textbf{Componentes esenciales de un ciclo:}
+\begin{itemize}
+    \item \textbf{Fluido de trabajo:} Aire o mezcla aire-combustible que experimenta las transformaciones
+    \item \textbf{Fuente de calor:} Proceso de combustión que aporta energía térmica
+    \item \textbf{Sumidero de calor:} Ambiente que recibe la energía térmica no convertida en trabajo
+    \item \textbf{Dispositivo de trabajo:} Pistón o turbina que convierte la energía térmica en trabajo mecánico
+\end{itemize}
+
+\subsection*{Parámetros Fundamentales}
+
+\textbf{Eficiencia Térmica:}
+La eficiencia térmica ($\eta$) de un ciclo termodinámico se define como la fracción del calor suministrado que se convierte en trabajo útil:
+
+$$\eta = \frac{W_{\text{neto}}}{Q_{\text{entrada}}} = \frac{Q_{\text{entrada}} - Q_{\text{salida}}}{Q_{\text{entrada}}}$$
+
+Donde:
+\begin{itemize}
+    \item $W_{\text{neto}}$ = trabajo neto producido por el ciclo
+    \item $Q_{\text{entrada}}$ = calor suministrado al sistema
+    \item $Q_{\text{salida}}$ = calor rechazado por el sistema
+\end{itemize}
+
+\textbf{Relación de Compresión:}
+En motores de pistón, la relación de compresión ($r$) es un parámetro crucial definido como:
+
+$$r = \frac{V_{\text{max}}}{V_{\text{min}}}$$
+
+Donde $V_{\text{max}}$ es el volumen cuando el pistón está en el punto muerto inferior y $V_{\text{min}}$ es el volumen cuando el pistón está en el punto muerto superior.
+
+\vspace{5mm}
+
+\section*{CICLO DE CARNOT: EL MOTOR TÉRMICO IDEAL}
+
+\subsection*{Descripción del Ciclo}
+
+El \hl{ciclo de Carnot}, propuesto por Sadi Carnot en 1824, representa el \textbf{motor térmico más eficiente} teóricamente posible que opera entre dos reservorios térmicos. Aunque es imposible de implementar prácticamente, establece el \hl{límite superior de eficiencia} para cualquier motor térmico.
+
+\textbf{Los cuatro procesos del ciclo de Carnot:}
+
+\begin{enumerate}
+    \item \textbf{Proceso 1-2: Expansión isotérmica}
+    \begin{itemize}
+        \item Temperatura constante ($T_{\text{alta}}$)
+        \item El sistema absorbe calor $Q_{\text{entrada}}$ de la fuente caliente
+        \item Se produce trabajo durante la expansión
+    \end{itemize}
+    
+    \item \textbf{Proceso 2-3: Expansión adiabática}
+    \begin{itemize}
+        \item No hay intercambio de calor ($Q = 0$)
+        \item La temperatura disminuye de $T_{\text{alta}}$ a $T_{\text{baja}}$
+        \item Continúa la expansión y producción de trabajo
+    \end{itemize}
+    
+    \item \textbf{Proceso 3-4: Compresión isotérmica}
+    \begin{itemize}
+        \item Temperatura constante ($T_{\text{baja}}$)
+        \item El sistema rechaza calor $Q_{\text{salida}}$ hacia el sumidero frío
+        \item Se requiere trabajo para la compresión
+    \end{itemize}
+    
+    \item \textbf{Proceso 4-1: Compresión adiabática}
+    \begin{itemize}
+        \item No hay intercambio de calor ($Q = 0$)
+        \item La temperatura aumenta de $T_{\text{baja}}$ a $T_{\text{alta}}$
+        \item Se completa el ciclo
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Eficiencia del Ciclo de Carnot}
+
+La eficiencia del ciclo de Carnot depende únicamente de las temperaturas de los reservorios térmicos:
+
+$$\eta_{\text{Carnot}} = 1 - \frac{T_{\text{fría}}}{T_{\text{caliente}}}$$
+
+\textbf{Ejemplo numérico:}
+Para un motor que opera con:
+\begin{itemize}
+    \item $T_{\text{caliente}} = 800^\circ C = 1073 K$ (temperatura de combustión)
+    \item $T_{\text{fría}} = 25^\circ C = 298 K$ (temperatura ambiente)
+\end{itemize}
+
+La eficiencia teórica sería:
+$$\eta_{\text{Carnot}} = 1 - \frac{298}{1073} = 0.722 = 72.2\%$$
+
+\textbf{Implicaciones para motores automotrices:}
+\begin{itemize}
+    \item Ningún motor real puede superar esta eficiencia teórica
+    \item Los motores reales alcanzan solo 25-35\% de eficiencia
+    \item Las pérdidas se deben a fricción, transferencia de calor, combustión incompleta, etc.
+\end{itemize}
+
+\vspace{5mm}
+
+\section*{CICLO OTTO: MOTORES DE GASOLINA}
+
+\subsection*{Descripción del Ciclo}
+
+El \hl{ciclo Otto}, desarrollado por Nikolaus Otto en 1876, es la base teórica de los \textbf{motores de gasolina} modernos. Este ciclo también se conoce como \textbf{ciclo de encendido por chispa} y opera con cuatro procesos principales.
+
+\textbf{Los cuatro procesos del ciclo Otto:}
+
+\begin{enumerate}
+    \item \textbf{Proceso 1-2: Compresión adiabática}
+    \begin{itemize}
+        \item Las válvulas están cerradas
+        \item La mezcla aire-combustible se comprime
+        \item La temperatura y presión aumentan significativamente
+        \item Relación de compresión típica: 8:1 a 12:1
+    \end{itemize}
+    
+    \item \textbf{Proceso 2-3: Combustión a volumen constante}
+    \begin{itemize}
+        \item La bujía produce una chispa que inicia la combustión
+        \item Liberación explosiva de energía química
+        \item La presión aumenta dramáticamente mientras el volumen permanece constante
+        \item Este es el proceso que diferencia al Otto del Carnot
+    \end{itemize}
+    
+    \item \textbf{Proceso 3-4: Expansión adiabática (carrera de trabajo)}
+    \begin{itemize}
+        \item Los gases calientes empujan el pistón hacia abajo
+        \item \textbf{Única carrera que produce trabajo útil}
+        \item La temperatura y presión disminuyen durante la expansión
+    \end{itemize}
+    
+    \item \textbf{Proceso 4-1: Escape a volumen constante}
+    \begin{itemize}
+        \item La válvula de escape se abre
+        \item Los gases quemados son expulsados al ambiente
+        \item La presión regresa rápidamente a las condiciones iniciales
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Eficiencia del Ciclo Otto}
+
+La eficiencia teórica del ciclo Otto depende únicamente de la relación de compresión:
+
+$$\eta_{\text{Otto}} = 1 - \frac{1}{r^{\gamma-1}}$$
+
+Donde:
+\begin{itemize}
+    \item $r$ = relación de compresión
+    \item $\gamma$ = relación de calores específicos ($\approx$ 1.4 para aire)
+\end{itemize}
+
+\textbf{Ejemplo de cálculo:}
+Para un motor con relación de compresión $r = 10:1$:
+$$\eta_{\text{Otto}} = 1 - \frac{1}{10^{0.4}} = 1 - 0.398 = 0.602 = 60.2\%$$
+
+\textbf{Factores que afectan la eficiencia real:}
+\begin{itemize}
+    \item \textbf{Detonación (knock):} Limita la relación de compresión máxima
+    \item \textbf{Pérdidas por fricción:} Entre pistones, anillos y cilindros
+    \item \textbf{Transferencia de calor:} Hacia las paredes del cilindro
+    \item \textbf{Combustión incompleta:} No todo el combustible se quema eficientemente
+    \item \textbf{Tiempo finito de combustión:} La combustión real no es instantánea
+\end{itemize}
+
+\subsection*{Aplicaciones Automotrices del Ciclo Otto}
+
+\textbf{Ventajas:}
+\begin{itemize}
+    \item Alta potencia específica (potencia por unidad de peso)
+    \item Funcionamiento suave y silencioso
+    \item Arranque fácil en frío
+    \item Menores emisiones de NOx comparado con diesel
+    \item Tecnología madura y bien establecida
+\end{itemize}
+
+\textbf{Aplicaciones típicas:}
+\begin{itemize}
+    \item Automóviles de pasajeros
+    \item Vehículos deportivos
+    \item Motocicletas
+    \item Equipos de jardinería y herramientas menores
+\end{itemize}
+
+\vspace{5mm}
+
+\section*{CICLO DIESEL: MOTORES DE COMPRESIÓN}
+
+\subsection*{Descripción del Ciclo}
+
+El \hl{ciclo Diesel}, desarrollado por Rudolf Diesel en 1892, es la base de los \textbf{motores diesel} modernos. La principal diferencia con el ciclo Otto es que la combustión ocurre a \textbf{presión constante} en lugar de volumen constante.
+
+\textbf{Los cuatro procesos del ciclo Diesel:}
+
+\begin{enumerate}
+    \item \textbf{Proceso 1-2: Compresión adiabática}
+    \begin{itemize}
+        \item \textbf{Solo aire} se comprime (sin combustible)
+        \item Relación de compresión muy alta: 14:1 a 22:1
+        \item La temperatura final supera los 500$^\circ$C, suficiente para autoencendido
+        \item Mayor compresión que en Otto debido a la ausencia de combustible
+    \end{itemize}
+    
+    \item \textbf{Proceso 2-3: Combustión a presión constante}
+    \begin{itemize}
+        \item El combustible se inyecta durante la expansión inicial
+        \item \textbf{Combustión controlada}, no explosiva como en Otto
+        \item La temperatura aumenta mientras el volumen aumenta
+        \item La presión se mantiene aproximadamente constante
+    \end{itemize}
+    
+    \item \textbf{Proceso 3-4: Expansión adiabática}
+    \begin{itemize}
+        \item Continuación de la expansión después de completarse la combustión
+        \item Extracción del trabajo útil
+        \item Disminución de presión y temperatura
+    \end{itemize}
+    
+    \item \textbf{Proceso 4-1: Escape a volumen constante}
+    \begin{itemize}
+        \item Similar al ciclo Otto
+        \item Liberación rápida de gases quemados
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Eficiencia del Ciclo Diesel}
+
+La eficiencia del ciclo Diesel depende tanto de la relación de compresión como de la relación de corte:
+
+$$\eta_{\text{Diesel}} = 1 - \frac{1}{r^{\gamma-1}} \times \frac{r_c^\gamma - 1}{\gamma(r_c - 1)}$$
+
+Donde:
+\begin{itemize}
+    \item $r$ = relación de compresión
+    \item $r_c$ = relación de corte ($V_3/V_2$, relacionada con la duración de la combustión)
+    \item $\gamma$ = relación de calores específicos
+\end{itemize}
+
+\textbf{Ventajas del ciclo Diesel:}
+\begin{itemize}
+    \item \textbf{Mayor eficiencia térmica:} 40-45\% vs 25-35\% del Otto
+    \item \textbf{Mayor densidad energética:} El diesel contiene más energía por litro
+    \item \textbf{Mayor durabilidad:} Construcción más robusta
+    \item \textbf{Mejor economía de combustible:} Especialmente en aplicaciones de carga
+\end{itemize}
+
+\subsection*{Aplicaciones Automotrices del Ciclo Diesel}
+
+\textbf{Características principales:}
+\begin{itemize}
+    \item Mayor torque a bajas revoluciones
+    \item Mejor para aplicaciones de trabajo pesado
+    \item Mayor peso del motor debido a la construcción robusta
+    \item Emisiones más altas de NOx y partículas
+\end{itemize}
+
+\textbf{Aplicaciones típicas:}
+\begin{itemize}
+    \item Camiones de carga
+    \item Autobuses de transporte público
+    \item Vehículos comerciales
+    \item Maquinaria agrícola e industrial
+    \item Generación de energía estacionaria
+\end{itemize}
+
+\vspace{5mm}
+
+\section*{ANÁLISIS COMPARATIVO}
+
+\subsection*{Comparación de Eficiencias Teóricas}
+
+La siguiente tabla compara las características principales de los tres ciclos estudiados:
+
+\begin{center}
+\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+\hline
+\textbf{Característica} & \textbf{Carnot} & \textbf{Otto} & \textbf{Diesel} \\
+\hline\hline
+\textbf{Eficiencia teórica} & 72\% (ejemplo) & 60\% (r=10) & 65\% (r=18) \\
+\hline
+\textbf{Eficiencia real} & Imposible de lograr & 25-35\% & 35-45\% \\
+\hline
+\textbf{Tipo de combustión} & Isotérmica ideal & Volumen constante & Presión constante \\
+\hline
+\textbf{Aplicabilidad} & Solo teórica & Motores de gasolina & Motores diesel \\
+\hline
+\textbf{Relación de compresión} & Variable & 8:1 - 12:1 & 14:1 - 22:1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection*{Criterios de Selección}
+
+\textbf{Ciclo Otto recomendado para:}
+\begin{itemize}
+    \item Conducción urbana con arranques y paradas frecuentes
+    \item Aplicaciones que requieren alta velocidad de rotación
+    \item Vehículos ligeros de pasajeros
+    \item Situaciones donde el peso del motor es crítico
+\end{itemize}
+
+\textbf{Ciclo Diesel recomendado para:}
+\begin{itemize}
+    \item Transporte de carga pesada
+    \item Recorridos de larga distancia
+    \item Aplicaciones que requieren alto torque a bajas RPM
+    \item Situaciones donde la economía de combustible es prioritaria
+\end{itemize}
+
+\vspace{5mm}
+
+\section*{TENDENCIAS FUTURAS}
+
+\subsection*{Innovaciones Tecnológicas}
+
+La industria automotriz está implementando diversas tecnologías para mejorar la eficiencia de los motores de combustión interna:
+
+\textbf{Optimizaciones del ciclo Otto:}
+\begin{itemize}
+    \item \textbf{Inyección directa:} Mejor control de la mezcla aire-combustible
+    \item \textbf{Turbocompresión:} Aumento de la densidad del aire de admisión
+    \item \textbf{Relación de compresión variable:} Optimización según condiciones de operación
+    \item \textbf{Ciclos Atkinson y Miller:} Variaciones que priorizan la eficiencia sobre la potencia
+\end{itemize}
+
+\textbf{Mejoras en motores Diesel:}
+\begin{itemize}
+    \item \textbf{Common Rail:} Sistema de inyección de alta presión
+    \item \textbf{Turbocompresión con intercooler:} Mejor llenado de cilindros
+    \item \textbf{Sistemas de postratamiento:} Reducción de emisiones NOx y partículas
+    \item \textbf{Diesel limpio:} Combustibles con menor contenido de azufre
+\end{itemize}
+
+\subsection*{Hibridización y Electrificación}
+
+La transición hacia la movilidad sostenible está generando:
+\begin{itemize}
+    \item \textbf{Motores híbridos:} Combinación de ciclos térmicos con propulsión eléctrica
+    \item \textbf{Recuperación de energía:} Aprovechamiento del calor de escape
+    \item \textbf{Optimización integral:} Gestión inteligente de sistemas de propulsión
+\end{itemize}
+
+\vspace{5mm}
+
+\section*{EJERCICIOS DE APLICACIÓN}
+
+\subsection*{Ejercicio 1: Cálculo de Eficiencia Otto}
+
+Un motor de gasolina tiene una relación de compresión de 9:1. Calcular:
+\begin{enumerate}
+    \item La eficiencia teórica del ciclo Otto
+    \item El trabajo neto si el calor de entrada es 2000 kJ
+    \item La explicación de por qué la eficiencia real es menor
+\end{enumerate}
+
+\textbf{Solución:}
+\begin{enumerate}
+    \item $\eta_{\text{Otto}} = 1 - \frac{1}{9^{0.4}} = 1 - 0.426 = 0.574 = 57.4\%$
+    \item $W_{\text{neto}} = \eta \times Q_{\text{entrada}} = 0.574 \times 2000 = 1148 \text{ kJ}$
+    \item La eficiencia real es menor debido a pérdidas por fricción, transferencia de calor, combustión incompleta y limitaciones de tiempo de los procesos reales.
+\end{enumerate}
+
+\subsection*{Ejercicio 2: Comparación Otto vs Diesel}
+
+Compare dos motores de la misma potencia nominal:
+\begin{itemize}
+    \item Motor Otto: r = 10:1, consumo 8 L/100km
+    \item Motor Diesel: r = 16:1, consumo 6 L/100km
+\end{itemize}
+
+Para un recorrido anual de 20,000 km, determine cuál es más económico considerando precios de combustible de \$20/L para gasolina y \$18/L para diesel.
+
+\vspace{5mm}
+
+\section*{CONCLUSIONES}
+
+El estudio de los \hl{ciclos termodinámicos} es fundamental para comprender el funcionamiento de los motores automotrices y optimizar su desempeño. Los conceptos principales que debe dominar el ingeniero en sistemas automotrices son:
+
+\begin{enumerate}
+    \item El \textbf{ciclo de Carnot} establece el límite teórico de eficiencia para cualquier motor térmico
+    \item El \textbf{ciclo Otto} es la base de los motores de gasolina, con combustión a volumen constante
+    \item El \textbf{ciclo Diesel} opera con combustión a presión constante y ofrece mayor eficiencia
+    \item La \textbf{selección del tipo de motor} depende de la aplicación específica y los requerimientos de operación
+    \item Las \textbf{innovaciones tecnológicas} continúan mejorando la eficiencia y reduciendo las emisiones
+\end{enumerate}
+
+El dominio de estos conceptos permite tomar decisiones informadas en el diseño, selección y optimización de sistemas de propulsión automotriz, contribuyendo a una movilidad más eficiente y sostenible.
+
+\vspace{5mm}
+
+\section*{REFERENCIAS BIBLIOGRÁFICAS}
+
+\begin{itemize}
+    \item Çengel, Y. A., \& Boles, M. A. (2019). \textit{Termodinámica}. 8va Edición. McGraw-Hill. Capítulos 9-11.
+    \item Moran, M. J., Shapiro, H. N., Boettner, D. D., \& Bailey, M. B. (2018). \textit{Fundamentos de Termodinámica Técnica}. 8va Edición. Reverté. Secciones sobre ciclos de potencia.
+    \item Heywood, J. B. (2018). \textit{Internal Combustion Engine Fundamentals}. 2da Edición. McGraw-Hill.
+    \item Ferguson, C. R., \& Kirkpatrick, A. T. (2016). \textit{Internal Combustion Engines: Applied Thermosciences}. 3ra Edición. Wiley.
+\end{itemize}
+
+\vspace{5mm}
+
+\section*{RECURSOS DIGITALES COMPLEMENTARIOS}
+
+\begin{itemize}
+    \item Simuladores interactivos de ciclos termodinámicos: \texttt{PhET Simulations}
+    \item Software de cálculo termodinámico: \texttt{CoolProp}, \texttt{REFPROP}
+    \item Videos educativos de motores en funcionamiento: Canal YouTube \textit{EngineeringExplained}
+    \item Documentación técnica de fabricantes automotrices: Manuales de servicio
+\end{itemize}
+
+\end{document}

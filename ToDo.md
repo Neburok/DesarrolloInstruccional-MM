@@ -4,17 +4,10 @@ Este archivo sirve para registrar tareas importantes pero no urgentes, ideas de 
 
 ---
 
-## Pendientes de Alta Prioridad (Próxima Sesión)
+## Instrucciones de Sesión
 
-1.  **Generar/Integrar Diagramas P-V en Lecturas AD (Ciclos Termodinámicos)**
-    -   **Tarea:** Crear o conseguir los diagramas P-V para los ciclos de Carnot, Otto y Diesel.
-    -   **Acción:** Insertar las referencias a estas imágenes en el archivo `AD.04.01.01_Lectura_Ciclos_Termodinamicos.tex`.
-    -   **Prioridad:** Alta (Crucial para la comprensión visual de la lectura).
-
-2.  **Generar PDFs de todos los Materiales de la Unidad 4**
-    -   **Tarea:** Compilar todos los archivos `.tex` generados para la Unidad 4 a sus respectivos PDFs.
-    -   **Acción:** Colocar los PDFs resultantes en la carpeta `_PRODUCTOS/` de la Unidad 4, siguiendo la nomenclatura estándar.
-    -   **Prioridad:** Alta (Producto final de la prueba piloto).
+-   Al inicio de cada sesión, por favor, revisa este `ToDo.md` para conocer las tareas pendientes y prioridades.
+-   También, revisa el resumen de la sesión anterior (`Resumen_Sesion_AAAA-MM-DD.md`) para retomar el contexto.
 
 ---
 
@@ -51,3 +44,9 @@ Este archivo sirve para registrar tareas importantes pero no urgentes, ideas de 
 - **Acción:** Crear un script o definir un proceso manual para limpiar los directorios de trabajo y mantener solo los archivos fuente (`.md`, `.tex`) y los productos finales (`.pdf`).
 - **Estado:** Pendiente.
 - **Prioridad:** Baja (Buenas prácticas de organización).
+
+### 5. Exploración del Flujo MD -> LaTeX -> PDF
+
+- **Tarea:** Investigar y prototipar la automatización de la conversión de Markdown a PDF vía LaTeX.
+- **Estado:** Exploración inicial completada. Se determinó que es técnicamente viable pero no trivial de implementar con la plantilla actual.
+- **Prioridad:** Posponer (Se prioriza el flujo .tex a PDF por ahora, debido a la complejidad y otras tareas pendientes).
