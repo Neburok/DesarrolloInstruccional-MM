@@ -1,0 +1,219 @@
+\documentclass[a4paper,landscape]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{helvet}
+\usepackage{graphicx}
+
+% Configuración de página
+\geometry{margin=1cm}
+\renewcommand{\familydefault}{\sfdefault}
+\pagestyle{empty}
+
+% Colores institucionales UTP
+\definecolor{UTPGreen}{HTML}{00833D}
+\definecolor{UTPLightGreen}{HTML}{4CAF50}
+\definecolor{UTPDarkGreen}{HTML}{2E7D32}
+\definecolor{UTPGray}{HTML}{666666}
+\definecolor{UTPLightGray}{HTML}{E0E0E0}
+\definecolor{UTPBlue}{HTML}{1976D2}
+\definecolor{UTPOrange}{HTML}{FF9800}
+\definecolor{UTPRed}{HTML}{D32F2F}
+
+\usetikzlibrary{shapes.geometric, arrows, positioning, decorations.pathreplacing}
+
+\begin{document}
+
+\begin{tikzpicture}[remember picture, overlay]
+    % Fondo principal
+    \fill[UTPLightGray!20] (current page.south west) rectangle (current page.north east);
+    
+    % Header institucional
+    \fill[UTPGreen] (current page.north west) rectangle ([yshift=-2cm]current page.north east);
+    
+    % Título principal
+    \node[anchor=north, text=white, font=\Huge\bfseries] at ([yshift=-1cm]current page.north) 
+        {PROCESOS TERMODINÁMICOS FUNDAMENTALES};
+    
+    % Subtítulo
+    \node[anchor=north, text=white, font=\Large] at ([yshift=-1.5cm]current page.north) 
+        {Ingeniería Automotriz - Termodinámica};
+    
+    % Logo UTP (placeholder)
+    \node[anchor=north west, text=white, font=\large\bfseries] at ([xshift=1cm, yshift=-0.5cm]current page.north west) 
+        {UTP};
+\end{tikzpicture}
+
+% Contenido principal
+\vspace{3cm}
+
+\begin{tikzpicture}[
+    process/.style={rectangle, rounded corners=10pt, minimum width=6cm, minimum height=8cm, 
+                   text centered, draw=black, line width=2pt, fill=#1},
+    equation/.style={rectangle, rounded corners=5pt, minimum width=5cm, minimum height=1cm,
+                    text centered, draw=UTPGray, fill=white, font=\footnotesize},
+    arrow/.style={thick, ->, >=stealth}
+]
+
+% Proceso Isotérmico
+\node[process=UTPBlue!20] (isotermico) at (0,0) {
+    \begin{minipage}{5.5cm}
+        \centering
+        {\color{UTPBlue}\Huge\bfseries ISOTÉRMICO}\\[0.3cm]
+        {\color{UTPDarkGreen}\Large\bfseries T = constante}\\[0.5cm]
+        
+        \includegraphics[width=3cm]{diagrama-isotermico.png}\\[0.3cm]
+        
+        {\color{UTPGray}\small\textbf{Características:}}\\
+        {\color{black}\small • Temperatura constante}\\
+        {\color{black}\small • Intercambio de calor con}\\
+        {\color{black}\small \phantom{•} el ambiente}\\
+        {\color{black}\small • Proceso muy lento}\\[0.3cm]
+        
+        {\color{UTPGray}\small\textbf{Aplicaciones:}}\\
+        {\color{black}\small • Expansión de gases}\\
+        {\color{black}\small • Compresores lentos}\\
+        {\color{black}\small • Procesos reversibles}\\[0.3cm]
+        
+        \begin{tikzpicture}
+            \node[equation] {\color{UTPBlue}$PV = \text{constante}$};
+        \end{tikzpicture}
+    \end{minipage}
+};
+
+% Proceso Isocórico
+\node[process=UTPOrange!20] (isocorico) at (7,0) {
+    \begin{minipage}{5.5cm}
+        \centering
+        {\color{UTPOrange}\Huge\bfseries ISOCÓRICO}\\[0.3cm]
+        {\color{UTPDarkGreen}\Large\bfseries V = constante}\\[0.5cm]
+        
+        \includegraphics[width=3cm]{diagrama-isocorico.png}\\[0.3cm]
+        
+        {\color{UTPGray}\small\textbf{Características:}}\\
+        {\color{black}\small • Volumen constante}\\
+        {\color{black}\small • Sin trabajo de frontera}\\
+        {\color{black}\small • Calentamiento/enfriamiento}\\
+        {\color{black}\small \phantom{•} a volumen fijo}\\[0.3cm]
+        
+        {\color{UTPGray}\small\textbf{Aplicaciones:}}\\
+        {\color{black}\small • Combustión en motores}\\
+        {\color{black}\small • Calentamiento en}\\
+        {\color{black}\small \phantom{•} recipientes rígidos}\\[0.3cm]
+        
+        \begin{tikzpicture}
+            \node[equation] {\color{UTPOrange}$\frac{P}{T} = \text{constante}$};
+        \end{tikzpicture}
+    \end{minipage}
+};
+
+% Proceso Adiabático
+\node[process=UTPRed!20] (adiabatico) at (14,0) {
+    \begin{minipage}{5.5cm}
+        \centering
+        {\color{UTPRed}\Huge\bfseries ADIABÁTICO}\\[0.3cm]
+        {\color{UTPDarkGreen}\Large\bfseries Q = 0}\\[0.5cm]
+        
+        \includegraphics[width=3cm]{diagrama-adiabatico.png}\\[0.3cm]
+        
+        {\color{UTPGray}\small\textbf{Características:}}\\
+        {\color{black}\small • Sin intercambio de calor}\\
+        {\color{black}\small • Proceso muy rápido}\\
+        {\color{black}\small • Sistema aislado}\\
+        {\color{black}\small • Cambio de temperatura}\\[0.3cm]
+        
+        {\color{UTPGray}\small\textbf{Aplicaciones:}}\\
+        {\color{black}\small • Compresión rápida}\\
+        {\color{black}\small • Expansión en turbinas}\\
+        {\color{black}\small • Motores de combustión}\\[0.3cm]
+        
+        \begin{tikzpicture}
+            \node[equation] {\color{UTPRed}$PV^{\gamma} = \text{constante}$};
+        \end{tikzpicture}
+    \end{minipage}
+};
+
+% Proceso Isobárico
+\node[process=UTPLightGreen!20] (isobarico) at (21,0) {
+    \begin{minipage}{5.5cm}
+        \centering
+        {\color{UTPLightGreen}\Huge\bfseries ISOBÁRICO}\\[0.3cm]
+        {\color{UTPDarkGreen}\Large\bfseries P = constante}\\[0.5cm]
+        
+        \includegraphics[width=3cm]{diagrama-isobarico.png}\\[0.3cm]
+        
+        {\color{UTPGray}\small\textbf{Características:}}\\
+        {\color{black}\small • Presión constante}\\
+        {\color{black}\small • Expansión/compresión}\\
+        {\color{black}\small \phantom{•} controlada}\\
+        {\color{black}\small • Intercambio de calor}\\[0.3cm]
+        
+        {\color{UTPGray}\small\textbf{Aplicaciones:}}\\
+        {\color{black}\small • Combustión en diesel}\\
+        {\color{black}\small • Calentamiento con}\\
+        {\color{black}\small \phantom{•} pistón móvil}\\[0.3cm]
+        
+        \begin{tikzpicture}
+            \node[equation] {\color{UTPLightGreen}$\frac{V}{T} = \text{constante}$};
+        \end{tikzpicture}
+    \end{minipage}
+};
+
+\end{tikzpicture}
+
+% Sección de comparación
+\vspace{2cm}
+
+\begin{tikzpicture}[remember picture, overlay]
+    % Franja de comparación
+    \fill[UTPGray!20] ([yshift=-13cm]current page.north west) rectangle ([yshift=-18cm]current page.north east);
+    
+    % Título de comparación
+    \node[anchor=north, text=UTPDarkGreen, font=\LARGE\bfseries] at ([yshift=-13.5cm]current page.north) 
+        {TABLA COMPARATIVA DE PROCESOS};
+\end{tikzpicture}
+
+\vspace{3cm}
+
+% Tabla comparativa
+\begin{center}
+\begin{tikzpicture}
+\node[anchor=center] at (0,0) {
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \rowcolor{UTPGreen!80}
+    \textcolor{white}{\textbf{Proceso}} & 
+    \textcolor{white}{\textbf{Constante}} & 
+    \textcolor{white}{\textbf{Ecuación}} & 
+    \textcolor{white}{\textbf{Trabajo}} & 
+    \textcolor{white}{\textbf{Calor}} \\
+    \hline
+    \rowcolor{UTPBlue!20}
+    \textbf{Isotérmico} & T = cte & $PV = \text{cte}$ & $W = nRT\ln\frac{V_f}{V_i}$ & $Q = W$ \\
+    \hline
+    \rowcolor{UTPOrange!20}
+    \textbf{Isocórico} & V = cte & $\frac{P}{T} = \text{cte}$ & $W = 0$ & $Q = nC_V\Delta T$ \\
+    \hline
+    \rowcolor{UTPRed!20}
+    \textbf{Adiabático} & Q = 0 & $PV^{\gamma} = \text{cte}$ & $W = \frac{P_iV_i - P_fV_f}{\gamma-1}$ & $Q = 0$ \\
+    \hline
+    \rowcolor{UTPLightGreen!20}
+    \textbf{Isobárico} & P = cte & $\frac{V}{T} = \text{cte}$ & $W = P\Delta V$ & $Q = nC_P\Delta T$ \\
+    \hline
+    \end{tabular}
+};
+\end{tikzpicture}
+\end{center}
+
+% Footer institucional
+\begin{tikzpicture}[remember picture, overlay]
+    \fill[UTPGreen] ([yshift=1cm]current page.south west) rectangle (current page.south east);
+    
+    \node[anchor=south, text=white, font=\large\bfseries] at ([yshift=0.5cm]current page.south) 
+        {Universidad Tecnológica de Puebla - Ingeniería Automotriz};
+\end{tikzpicture}
+
+\end{document}
