@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclo de Carnot: Los Cuatro Procesos Termodinámicos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .cycle-overview {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .cycle-overview h2 {
+            color: #764ba2;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        .efficiency-formula {
+            background: #f8f9fa;
+            border-left: 5px solid #764ba2;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+            font-size: 1.3em;
+            text-align: center;
+        }
+
+        .processes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .process-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .process-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .process-card.active {
+            border: 3px solid #667eea;
+            transform: scale(1.02);
+        }
+
+        .process-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .process-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .process-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .piston-diagram {
+            width: 100%;
+            height: 200px;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background: #f9f9f9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .piston-container {
+            width: 80%;
+            height: 150px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .cylinder {
+            width: 100%;
+            height: 80px;
+            background: #e0e0e0;
+            border: 3px solid #666;
+            border-radius: 0 0 10px 10px;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        .piston {
+            width: 90%;
+            height: 15px;
+            background: linear-gradient(to bottom, #888, #555);
+            border-radius: 5px;
+            position: absolute;
+            left: 5%;
+            transition: all 0.8s ease-in-out;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .piston-rod {
+            width: 8px;
+            height: 50px;
+            background: linear-gradient(to right, #666, #444);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -50px;
+            border-radius: 4px;
+        }
+
+        .gas-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .particle {
+            width: 4px;
+            height: 4px;
+            background: #667eea;
+            border-radius: 50%;
+            position: absolute;
+            animation: float 2s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); opacity: 0.7; }
+            50% { transform: translateY(-10px); opacity: 1; }
+        }
+
+        .process-description {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+
+        .process-description h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+
+        .process-properties {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .property {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .property-label {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 0.9em;
+        }
+
+        .property-value {
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .temperature-indicator {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .temp-hot { background: #ff4757; }
+        .temp-cold { background: #3742fa; }
+
+        .navigation {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .nav-button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 0 10px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .diagram-pv {
+            width: 100%;
+            height: 300px;
+            background: white;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pv-axes {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+        }
+
+        .axis {
+            position: absolute;
+            background: #333;
+        }
+
+        .axis-x {
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+        }
+
+        .axis-y {
+            bottom: 0;
+            left: 0;
+            width: 2px;
+            height: 100%;
+        }
+
+        .axis-label {
+            position: absolute;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .label-x {
+            bottom: -25px;
+            right: -10px;
+        }
+
+        .label-y {
+            top: -10px;
+            left: -25px;
+        }
+
+        .cycle-path {
+            position: absolute;
+            stroke: #667eea;
+            stroke-width: 3;
+            fill: rgba(102, 126, 234, 0.1);
+        }
+
+        .process-point {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #764ba2;
+            border: 2px solid white;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        .point-label {
+            position: absolute;
+            font-weight: bold;
+            color: #764ba2;
+            font-size: 1.2em;
+            transform: translate(-50%, -150%);
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            padding: 30px 0;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 768px) {
+            .processes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .process-properties {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Ciclo de Carnot</h1>
+            <p>Los Cuatro Procesos Termodinámicos del Ciclo de Máxima Eficiencia</p>
+        </div>
+
+        <!-- Cycle Overview -->
+        <div class="cycle-overview">
+            <h2>Eficiencia Máxima Teórica</h2>
+            <p>El <strong>Ciclo de Carnot</strong> representa el ciclo termodinámico más eficiente posible que puede operar entre dos reservorios térmicos. Su eficiencia depende únicamente de las temperaturas absolutas de los reservorios.</p>
+            
+            <div class="efficiency-formula">
+                <strong>η<sub>Carnot</sub> = 1 - T<sub>C</sub>/T<sub>H</sub></strong>
+            </div>
+            
+            <p>Donde T<sub>H</sub> es la temperatura del reservorio caliente y T<sub>C</sub> la del reservorio frío (en Kelvin).</p>
+        </div>
+
+        <!-- P-V Diagram -->
+        <div class="diagram-pv">
+            <div class="pv-axes">
+                <div class="axis axis-x"></div>
+                <div class="axis axis-y"></div>
+                <div class="axis-label label-x">Volumen (V)</div>
+                <div class="axis-label label-y">Presión (P)</div>
+                
+                <!-- Cycle Path -->
+                <svg width="100%" height="100%" style="position: absolute; top: 0; left: 0;">
+                    <path class="cycle-path" d="M 80 200 Q 150 180 220 160 L 280 220 Q 200 240 120 260 Z"/>
+                </svg>
+                
+                <!-- Process Points -->
+                <div class="process-point" style="left: 80px; top: 200px;">
+                    <div class="point-label">1</div>
+                </div>
+                <div class="process-point" style="left: 220px; top: 160px;">
+                    <div class="point-label">2</div>
+                </div>
+                <div class="process-point" style="left: 280px; top: 220px;">
+                    <div class="point-label">3</div>
+                </div>
+                <div class="process-point" style="left: 120px; top: 260px;">
+                    <div class="point-label">4</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Processes Grid -->
+        <div class="processes-grid">
+            <!-- Proceso 1: Expansión Isotérmica -->
+            <div class="process-card" data-process="1">
+                <div class="process-header">
+                    <div class="process-number">1</div>
+                    <div class="process-title">Expansión Isotérmica (1→2)</div>
+                </div>
+                
+                <div class="piston-diagram" id="piston-1">
+                    <div class="piston-container">
+                        <div class="cylinder">
+                            <div class="piston" style="top: 50px;">
+                                <div class="piston-rod"></div>
+                            </div>
+                            <div class="gas-particles">
+                                <div class="particle" style="left: 20%; top: 65%; animation-delay: 0s;"></div>
+                                <div class="particle" style="left: 40%; top: 70%; animation-delay: 0.5s;"></div>
+                                <div class="particle" style="left: 60%; top: 60%; animation-delay: 1s;"></div>
+                                <div class="particle" style="left: 80%; top: 75%; animation-delay: 1.5s;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-description">
+                    <h4>Características del Proceso</h4>
+                    <p>El gas se expande a <strong>temperatura constante T<sub>H</sub></strong> mientras absorbe calor del reservorio caliente.</p>
+                    
+                    <div class="process-properties">
+                        <div class="property">
+                            <div class="property-label">Temperatura</div>
+                            <div class="property-value">T<sub>H</sub> = Constante <span class="temperature-indicator temp-hot"></span></div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Presión</div>
+                            <div class="property-value">Disminuye</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Volumen</div>
+                            <div class="property-value">Aumenta</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Calor</div>
+                            <div class="property-value">Q<sub>H</sub> > 0 (Absorbe)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proceso 2: Expansión Adiabática -->
+            <div class="process-card" data-process="2">
+                <div class="process-header">
+                    <div class="process-number">2</div>
+                    <div class="process-title">Expansión Adiabática (2→3)</div>
+                </div>
+                
+                <div class="piston-diagram" id="piston-2">
+                    <div class="piston-container">
+                        <div class="cylinder">
+                            <div class="piston" style="top: 65px;">
+                                <div class="piston-rod"></div>
+                            </div>
+                            <div class="gas-particles">
+                                <div class="particle" style="left: 25%; top: 75%; animation-delay: 0s;"></div>
+                                <div class="particle" style="left: 50%; top: 80%; animation-delay: 0.7s;"></div>
+                                <div class="particle" style="left: 75%; top: 85%; animation-delay: 1.4s;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-description">
+                    <h4>Características del Proceso</h4>
+                    <p>El gas continúa expandiéndose <strong>sin intercambio de calor</strong>, disminuyendo su temperatura hasta T<sub>C</sub>.</p>
+                    
+                    <div class="process-properties">
+                        <div class="property">
+                            <div class="property-label">Temperatura</div>
+                            <div class="property-value">T<sub>H</sub> → T<sub>C</sub> (Disminuye)</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Presión</div>
+                            <div class="property-value">Disminuye</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Volumen</div>
+                            <div class="property-value">Aumenta</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Calor</div>
+                            <div class="property-value">Q = 0 (Adiabático)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proceso 3: Compresión Isotérmica -->
+            <div class="process-card" data-process="3">
+                <div class="process-header">
+                    <div class="process-number">3</div>
+                    <div class="process-title">Compresión Isotérmica (3→4)</div>
+                </div>
+                
+                <div class="piston-diagram" id="piston-3">
+                    <div class="piston-container">
+                        <div class="cylinder">
+                            <div class="piston" style="top: 35px;">
+                                <div class="piston-rod"></div>
+                            </div>
+                            <div class="gas-particles">
+                                <div class="particle" style="left: 30%; top: 45%; animation-delay: 0s;"></div>
+                                <div class="particle" style="left: 50%; top: 50%; animation-delay: 0.3s;"></div>
+                                <div class="particle" style="left: 70%; top: 40%; animation-delay: 0.6s;"></div>
+                                <div class="particle" style="left: 40%; top: 55%; animation-delay: 0.9s;"></div>
+                                <div class="particle" style="left: 60%; top: 45%; animation-delay: 1.2s;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-description">
+                    <h4>Características del Proceso</h4>
+                    <p>El gas se comprime a <strong>temperatura constante T<sub>C</sub></strong> mientras rechaza calor al reservorio frío.</p>
+                    
+                    <div class="process-properties">
+                        <div class="property">
+                            <div class="property-label">Temperatura</div>
+                            <div class="property-value">T<sub>C</sub> = Constante <span class="temperature-indicator temp-cold"></span></div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Presión</div>
+                            <div class="property-value">Aumenta</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Volumen</div>
+                            <div class="property-value">Disminuye</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Calor</div>
+                            <div class="property-value">Q<sub>C</sub> < 0 (Rechaza)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proceso 4: Compresión Adiabática -->
+            <div class="process-card" data-process="4">
+                <div class="process-header">
+                    <div class="process-number">4</div>
+                    <div class="process-title">Compresión Adiabática (4→1)</div>
+                </div>
+                
+                <div class="piston-diagram" id="piston-4">
+                    <div class="piston-container">
+                        <div class="cylinder">
+                            <div class="piston" style="top: 25px;">
+                                <div class="piston-rod"></div>
+                            </div>
+                            <div class="gas-particles">
+                                <div class="particle" style="left: 35%; top: 35%; animation-delay: 0s;"></div>
+                                <div class="particle" style="left: 55%; top: 40%; animation-delay: 0.2s;"></div>
+                                <div class="particle" style="left: 45%; top: 30%; animation-delay: 0.4s;"></div>
+                                <div class="particle" style="left: 25%; top: 45%; animation-delay: 0.6s;"></div>
+                                <div class="particle" style="left: 65%; top: 35%; animation-delay: 0.8s;"></div>
+                                <div class="particle" style="left: 75%; top: 45%; animation-delay: 1.0s;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-description">
+                    <h4>Características del Proceso</h4>
+                    <p>El gas se comprime <strong>sin intercambio de calor</strong>, aumentando su temperatura de T<sub>C</sub> hasta T<sub>H</sub>.</p>
+                    
+                    <div class="process-properties">
+                        <div class="property">
+                            <div class="property-label">Temperatura</div>
+                            <div class="property-value">T<sub>C</sub> → T<sub>H</sub> (Aumenta)</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Presión</div>
+                            <div class="property-value">Aumenta</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Volumen</div>
+                            <div class="property-value">Disminuye</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Calor</div>
+                            <div class="property-value">Q = 0 (Adiabático)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button class="nav-button" id="prevBtn" onclick="previousProcess()">&larr; Anterior</button>
+            <button class="nav-button" id="autoBtn" onclick="toggleAutoplay()">▶ Reproducir Ciclo</button>
+            <button class="nav-button" id="nextBtn" onclick="nextProcess()">Siguiente &rarr;</button>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>LISA-TEA3 - Termodinámica Automotriz | UNIDAD 4</strong></p>
+            <p>Universidad Tecnológica de Querétaro - Enfoque Basado en Competencias</p>
+        </div>
+    </div>
+
+    <script>
+        let currentProcess = 1;
+        let autoplay = false;
+        let autoplayInterval;
+
+        // Initialize the visualization
+        document.addEventListener('DOMContentLoaded', function() {
+            highlightProcess(1);
+            
+            // Add click handlers to process cards
+            document.querySelectorAll('.process-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const processNum = parseInt(this.dataset.process);
+                    currentProcess = processNum;
+                    highlightProcess(processNum);
+                    animatePiston(processNum);
+                });
+            });
+        });
+
+        function highlightProcess(processNum) {
+            // Remove active class from all cards
+            document.querySelectorAll('.process-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            
+            // Add active class to current card
+            document.querySelector(`[data-process="${processNum}"]`).classList.add('active');
+            
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = processNum === 1;
+            document.getElementById('nextBtn').disabled = processNum === 4;
+        }
+
+        function animatePiston(processNum) {
+            const piston = document.querySelector(`#piston-${processNum} .piston`);
+            
+            // Reset position
+            piston.style.transition = 'none';
+            
+            switch(processNum) {
+                case 1: // Expansión isotérmica
+                    piston.style.top = '60px';
+                    setTimeout(() => {
+                        piston.style.transition = 'all 2s ease-in-out';
+                        piston.style.top = '40px';
+                    }, 100);
+                    break;
+                case 2: // Expansión adiabática  
+                    piston.style.top = '40px';
+                    setTimeout(() => {
+                        piston.style.transition = 'all 2s ease-in-out';
+                        piston.style.top = '70px';
+                    }, 100);
+                    break;
+                case 3: // Compresión isotérmica
+                    piston.style.top = '70px';
+                    setTimeout(() => {
+                        piston.style.transition = 'all 2s ease-in-out';
+                        piston.style.top = '50px';
+                    }, 100);
+                    break;
+                case 4: // Compresión adiabática
+                    piston.style.top = '50px';
+                    setTimeout(() => {
+                        piston.style.transition = 'all 2s ease-in-out';
+                        piston.style.top = '25px';
+                    }, 100);
+                    break;
+            }
+        }
+
+        function nextProcess() {
+            if (currentProcess < 4) {
+                currentProcess++;
+                highlightProcess(currentProcess);
+                animatePiston(currentProcess);
+            }
+        }
+
+        function previousProcess() {
+            if (currentProcess > 1) {
+                currentProcess--;
+                highlightProcess(currentProcess);
+                animatePiston(currentProcess);
+            }
+        }
+
+        function toggleAutoplay() {
+            const btn = document.getElementById('autoBtn');
+            
+            if (!autoplay) {
+                autoplay = true;
+                btn.textContent = '⏸ Pausar Ciclo';
+                btn.style.background = '#ff4757';
+                
+                autoplayInterval = setInterval(() => {
+                    currentProcess++;
+                    if (currentProcess > 4) {
+                        currentProcess = 1;
+                    }
+                    highlightProcess(currentProcess);
+                    animatePiston(currentProcess);
+                }, 3000);
+            } else {
+                autoplay = false;
+                btn.textContent = '▶ Reproducir Ciclo';
+                btn.style.background = 'linear-gradient(45deg, #667eea, #764ba2)';
+                clearInterval(autoplayInterval);
+            }
+        }
+
+        // Add particle animation randomization
+        function randomizeParticles() {
+            document.querySelectorAll('.particle').forEach(particle => {
+                particle.style.animationDelay = Math.random() * 2 + 's';
+                particle.style.left = Math.random() * 80 + 10 + '%';
+            });
+        }
+
+        // Randomize particles every 5 seconds
+        setInterval(randomizeParticles, 5000);
+    </script>
+</body>
+</html>
