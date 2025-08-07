@@ -1,0 +1,76 @@
+<svg width="1000" height="350" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            .cylinder {
+                fill: #f0f0f0;
+                stroke: #555;
+                stroke-width: 4;
+            }
+            .piston {
+                fill: #b0b0b0;
+                stroke: #333;
+                stroke-width: 2;
+            }
+            .rod {
+                stroke: #888;
+                stroke-width: 8;
+            }
+            .title {
+                font-family: Arial, sans-serif;
+                font-size: 20px;
+                font-weight: bold;
+                text-anchor: middle;
+            }
+            .arrow {
+                fill: none;
+                stroke: #d9534f;
+                stroke-width: 5;
+                marker-end: url(#arrowhead);
+            }
+            .arrow-exhaust {
+                stroke: #5bc0de;
+            }
+        </style>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" />
+        </marker>
+    </defs>
+
+    <!-- 1. Admisión -->
+    <g transform="translate(125, 50)">
+        <text x="0" y="-20" class="title">1. Admisión</text>
+        <rect x="-50" y="0" width="100" height="250" class="cylinder"/>
+        <line x1="0" y1="180" x2="0" y2="280" class="rod"/>
+        <rect x="-40" y="160" width="80" height="20" class="piston"/>
+        <path d="M -20 0 V 40" class="arrow"/>
+        <text x="-20" y="60" font-family="Arial" font-size="14" fill="#d9534f">Mezcla</text>
+    </g>
+
+    <!-- 2. Compresión -->
+    <g transform="translate(375, 50)">
+        <text x="0" y="-20" class="title">2. Compresión</text>
+        <rect x="-50" y="0" width="100" height="250" class="cylinder"/>
+        <line x1="0" y1="50" x2="0" y2="150" class="rod"/>
+        <rect x="-40" y="30" width="80" height="20" class="piston"/>
+    </g>
+
+    <!-- 3. Potencia (Expansión) -->
+    <g transform="translate(625, 50)">
+        <text x="0" y="-20" class="title">3. Potencia</text>
+        <rect x="-50" y="0" width="100" height="250" class="cylinder"/>
+        <line x1="0" y1="180" x2="0" y2="280" class="rod"/>
+        <rect x="-40" y="160" width="80" height="20" class="piston"/>
+        <text x="0" y="20" font-family="Arial" font-size="24" fill="#e74c3c" text-anchor="middle">💥</text>
+    </g>
+
+    <!-- 4. Escape -->
+    <g transform="translate(875, 50)">
+        <text x="0" y="-20" class="title">4. Escape</text>
+        <rect x="-50" y="0" width="100" height="250" class="cylinder"/>
+        <line x1="0" y1="50" x2="0" y2="150" class="rod"/>
+        <rect x="-40" y="30" width="80" height="20" class="piston"/>
+        <path d="M 20 40 V 0" class="arrow arrow-exhaust"/>
+        <text x="20" y="60" font-family="Arial" font-size="14" fill="#5bc0de" transform="translate(20, -70)">Gases</text>
+    </g>
+
+</svg>

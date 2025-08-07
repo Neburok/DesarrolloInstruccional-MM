@@ -1,0 +1,32 @@
+INSTRUCCIONES PARA CONVERTIR MARKDOWN A WORD CON PANDOC
+
+1. ABRIR COMMAND PROMPT (CMD) COMO ADMINISTRADOR
+   - Presiona Win + R
+   - Escribe "cmd" y presiona Ctrl + Shift + Enter
+
+2. NAVEGAR AL DIRECTORIO DE LOS ARCHIVOS:
+   cd "C:\Repositorios\DesarrolloInstruccional-MM\02_Asignaturas\LISA-TEA3-TermodinamicaAutomotriz\UNIDAD_4\AD"
+
+3. VERIFICAR QUE PANDOC FUNCIONA:
+   pandoc --version
+
+4. CONVERTIR EL ARCHIVO DE CICLO DE CARNOT:
+   pandoc -s "AD.04.01.01_Lectura_Ciclo_Carnot_Eficiencia_Maxima.md" -o "AD.04.01.01_Lectura_Ciclo_Carnot_Eficiencia_Maxima.docx" --mathml --wrap=none
+
+5. CONVERTIR EL ARCHIVO DE OTTO Y DIESEL:
+   pandoc -s "AD.04.02.01_Lectura_Comparativa_Otto_Diesel.md" -o "AD.04.02.01_Lectura_Comparativa_Otto_Diesel.docx" --mathml --wrap=none
+
+6. VERIFICAR QUE SE CREARON LOS ARCHIVOS .DOCX:
+   dir *.docx
+
+PARÁMETROS EXPLICADOS:
+- -s : Documento standalone (independiente)
+- -o : Archivo de salida
+- --mathml : Convierte LaTeX a ecuaciones de Word
+- --wrap=none : No ajusta líneas automáticamente
+
+RESULTADO ESPERADO:
+- AD.04.01.01_Lectura_Ciclo_Carnot_Eficiencia_Maxima.docx
+- AD.04.02.01_Lectura_Comparativa_Otto_Diesel.docx
+
+NOTA: Las fórmulas LaTeX se convertirán automáticamente a ecuaciones editables de Word.
