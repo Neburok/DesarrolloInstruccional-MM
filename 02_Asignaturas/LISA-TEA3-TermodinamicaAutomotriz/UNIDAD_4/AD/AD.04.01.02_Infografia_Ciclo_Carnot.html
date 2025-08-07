@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Ciclo de Carnot</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: 700;
+        }
+        .header p {
+            font-size: 1.4em;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        .main-content {
+            padding: 40px;
+        }
+        .section-title {
+            font-size: 2.5em;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #4ca1af;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        .step-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            border-top: 5px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .step-1 { border-color: #e74c3c; }
+        .step-2 { border-color: #f39c12; }
+        .step-3 { border-color: #3498db; }
+        .step-4 { border-color: #9b59b6; }
+        .step-icon {
+            font-size: 4em;
+            margin-bottom: 15px;
+        }
+        .step-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .step-desc {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .diagrams-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        .diagram {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1em;
+            line-height: 1.4;
+            border: 2px dashed #ccc;
+        }
+        .diagram-title {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        .formula-section {
+            background: linear-gradient(135deg, #4ca1af, #2c3e50);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .formula-title {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        .formula {
+            font-size: 2.5em;
+            font-weight: bold;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .relevance-section {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        .relevance-icon {
+            font-size: 8em;
+            color: #2c3e50;
+        }
+        .relevance-text h3 {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .relevance-text ul {
+            list-style-type: '✓ ';
+            padding-left: 20px;
+            font-size: 1.2em;
+        }
+        .relevance-text li {
+            margin-bottom: 10px;
+        }
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 1.2em;
+        }
+        @media (max-width: 768px) {
+            .diagrams-section {
+                grid-template-columns: 1fr;
+            }
+            .relevance-section {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1>El Ciclo de Carnot</h1>
+            <p>El Motor Perfecto que Mueve la Teoría</p>
+        </header>
+
+        <main class="main-content">
+            <h2 class="section-title">¿Qué es y por qué es el "Límite de la Eficiencia"?</h2>
+            <p style="text-align: center; font-size: 1.2em; max-width: 800px; margin: 0 auto 50px;">
+                El Ciclo de Carnot es un ciclo termodinámico teórico que establece la máxima eficiencia posible para cualquier máquina térmica que opera entre dos temperaturas. Aunque es un ideal inalcanzable en la práctica, es la vara con la que medimos y entendemos el rendimiento de todos los motores reales.
+            </p>
+
+            <h2 class="section-title">Los 4 Pasos del Ciclo</h2>
+            <div class="steps-grid">
+                <div class="step-card step-1">
+                    <div class="step-icon">🔥</div>
+                    <h3 class="step-title">1. Expansión Isotérmica</h3>
+                    <p class="step-desc">El gas se expande a temperatura constante ($T_H$). Para lograrlo, absorbe calor de una fuente caliente ($Q_H$) y lo convierte en trabajo ($W$).</p>
+                </div>
+                <div class="step-card step-2">
+                    <div class="step-icon">💨</div>
+                    <h3 class="step-title">2. Expansión Adiabática</h3>
+                    <p class="step-desc">El gas se sigue expandiendo, pero ahora aislado (sin intercambio de calor). Realiza trabajo a costa de su propia energía, por lo que su temperatura baja de $T_H$ a $T_C$.</p>
+                </div>
+                <div class="step-card step-3">
+                    <div class="step-icon">❄️</div>
+                    <h3 class="step-title">3. Compresión Isotérmica</h3>
+                    <p class="step-desc">Se comprime el gas a temperatura constante ($T_C$). Para mantener la temperatura, libera calor a una fuente fría ($Q_C$). Se requiere trabajo para comprimirlo.</p>
+                </div>
+                <div class="step-card step-4">
+                    <div class="step-icon">⚙️</div>
+                    <h3 class="step-title">4. Compresión Adiabática</h3>
+                    <p class="step-desc">El gas se sigue comprimiendo de forma aislada. El trabajo aplicado aumenta su energía interna, elevando su temperatura de $T_C$ de vuelta a $T_H$, completando el ciclo.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Diagramas Clave</h2>
+            <div class="diagrams-section">
+                <div class="diagram">
+                    <div class="diagram-title">Diagrama P-V (Presión-Volumen)</div>
+                    <pre>
+     P ▲
+       │
+     1 ├─── Expansión Isotérmica ───► 2
+       │ ╲                           ╱
+       │   ╲                       ╱
+     4 ├───── Compresión Adiabática
+       │   ╱   ╲                   │
+       │ ╱       ╲ Expansión Adiabática
+       │           ╲               │
+       └───────────── Compresión Isotérm. ──► 3
+                     V ►
+                    </pre>
+                </div>
+                <div class="diagram">
+                    <div class="diagram-title">Diagrama T-S (Temperatura-Entropía)</div>
+                    <pre>
+     T ▲
+       │
+   T_H ├───── 1 ═══════════════ 2 ─────► Q_H
+       │       │                 │
+       │       │                 │
+       │       │(S=cte)           │(S=cte)
+       │       │                 │
+   T_C ├───── 4 ═══════════════ 3 ─────► Q_C
+       │
+       └───────────────────────────────────► S
+                    </pre>
+                </div>
+            </div>
+
+            <div class="formula-section">
+                <h3 class="formula-title">La Fórmula de la Eficiencia Máxima</h3>
+                <div class="formula">
+                    η_carnot = 1 - (T_C / T_H)
+                </div>
+                <p style="margin-top: 20px; font-size: 1.2em;">La eficiencia depende únicamente de las temperaturas (en Kelvin) de las fuentes fría ($T_C$) y caliente ($T_H$).</p>
+            </div>
+
+            <h2 class="section-title">Relevancia en Ingeniería Automotriz</h2>
+            <div class="relevance-section">
+                <div class="relevance-icon">🚗</div>
+                <div class="relevance-text">
+                    <h3>¿Por qué un ingeniero automotriz debe conocerlo?</h3>
+                    <ul>
+                        <li><strong>Benchmark de Rendimiento:</strong> Sirve como el estándar de oro para comparar la eficiencia de motores reales (Otto, Diesel).</li>
+                        <li><strong>Diseño de Sistemas de A/C:</strong> El ciclo de refrigeración es un "Ciclo de Carnot inverso", fundamental para diseñar sistemas de climatización.</li>
+                        <li><strong>Optimización Términa:</strong> Ayuda a entender cómo las temperaturas de operación (combustión y ambiente) limitan la eficiencia del motor.</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p><strong>Conclusión Clave:</strong> El Ciclo de Carnot es el estándar de oro teórico contra el que se miden todos los motores.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
