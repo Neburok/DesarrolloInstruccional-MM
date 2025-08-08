@@ -1,0 +1,186 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+% Tema y configuración
+\usetheme{Madrid}
+\usecolortheme{beaver}
+
+% Paquetes
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+% Configuración de colores personalizados
+\definecolor{azulUTQ}{RGB}{0,51,102}
+\definecolor{grisClaro}{RGB}{245,245,245}
+\definecolor{verdeExito}{RGB}{46,125,50}
+\definecolor{naranjaAlerta}{RGB}{255,152,0}
+
+% Personalización del tema
+\setbeamercolor{structure}{fg=azulUTQ}
+\setbeamercolor{frametitle}{bg=azulUTQ,fg=white}
+\setbeamercolor{title}{fg=azulUTQ}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[triangle]
+
+% Información del documento
+\title[Estandarización de Materiales Educativos]{%
+	Proyecto de Estandarización\\
+	de Materiales Educativos}
+\subtitle{Sistematización del Desarrollo de\\Actividades de Desarrollo (ADs)}
+\author{Equipo de Desarrollo Pedagógico}
+\institute{Universidad Tecnológica de Querétaro}
+\date{\today}
+
+% Logo en el pie de página
+%\logo{\includegraphics[height=0.8cm]{placeholder_logo_utq.png}}
+
+\begin{document}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% PORTADA
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{frame}
+		\titlepage
+		\begin{center}
+			\small
+			\textit{Una propuesta metodológica para garantizar calidad,\\
+				coherencia y escalabilidad en el desarrollo de recursos didácticos}
+		\end{center}
+	\end{frame}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% ÍNDICE
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{frame}{Agenda}
+		\tableofcontents
+	\end{frame}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% SECCIÓN 1: SITUACIÓN ACTUAL
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\section{Situación Actual}
+	
+	\begin{frame}{Desafíos Identificados}
+		\begin{columns}
+			\begin{column}{0.45\textwidth}
+				\begin{block}{Falta de Estandarización}
+					\begin{itemize}
+						\item Inconsistencias en formato
+						\item Variabilidad en estructura
+						\item Calidad heterogénea
+					\end{itemize}
+				\end{block}
+				
+				\begin{block}{Proceso No Sistemático}
+					\begin{itemize}
+						\item Desarrollo ad-hoc
+						\item Sin metodología clara
+						\item Ausencia de criterios
+					\end{itemize}
+				\end{block}
+			\end{column}
+			
+			\begin{column}{0.45\textwidth}
+				\begin{block}{Ineficiencia Operativa}
+					\begin{itemize}
+						\item Duplicación de esfuerzos
+						\item Reinvención de recursos
+						\item Pérdida de tiempo
+					\end{itemize}
+				\end{block}
+				
+				\begin{block}{Falta de Evaluación}
+					\begin{itemize}
+						\item Sin criterios objetivos
+						\item Calidad no medible
+						\item Mejora no sistemática
+					\end{itemize}
+				\end{block}
+			\end{column}
+		\end{columns}
+	\end{frame}
+
+
+
+
+\section{Nuestra Propuesta}
+
+\begin{frame}{Solución Integral}
+	\begin{center}
+		\Large
+		\textcolor{azulUTQ}{\textbf{Guía Metodológica Integral}}\\
+		\vspace{0.5cm}
+		\normalsize
+		para el desarrollo estandarizado de\\
+		Actividades de Desarrollo (ADs)
+	\end{center}
+	
+	\vspace{1cm}
+	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item \textbf{Metodología estructurada} en 4 fases
+				\item \textbf{Control de calidad} por pares
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item \textbf{Herramientas estandarizadas}
+				\item \textbf{Proceso escalable} y replicable
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECCIÓN 3: COMPONENTES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Ecosistema de Materiales}
+
+\begin{frame}{Paquete Integral por Unidad}
+	\begin{center}
+		\textbf{Cada unidad académica contará con cuatro componentes:}
+	\end{center}
+	
+	\vspace{0.5cm}
+	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{block}{AD - Actividades de Desarrollo}
+				Material principal para aprendizaje autónomo
+			\end{block}
+			
+			\begin{block}{AR - Actividades de Reforzamiento}
+				Ejercicios complementarios para práctica
+			\end{block}
+		\end{column}
+		
+		\begin{column}{0.5\textwidth}
+			\begin{block}{AVS - Verificación de Saberes}
+				Evaluación sumativa presencial
+			\end{block}
+			
+			\begin{block}{ER - Evaluación de Recuperación}
+				Evaluación alternativa de recuperación
+			\end{block}
+		\end{column}
+	\end{columns}
+	
+	\vspace{0.5cm}
+	
+	\begin{center}
+		\textcolor{verdeExito}{\textbf{Cobertura completa del proceso educativo}}
+	\end{center}
+\end{frame}
+
+\end{document}
