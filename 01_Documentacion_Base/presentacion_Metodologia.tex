@@ -1,0 +1,471 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+% Tema y configuración
+\usetheme{Madrid}
+\usecolortheme{beaver}
+
+% Paquetes
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+% Configuración de colores personalizados
+\definecolor{azulUTQ}{RGB}{0,51,102}
+\definecolor{grisClaro}{RGB}{245,245,245}
+\definecolor{verdeExito}{RGB}{46,125,50}
+\definecolor{naranjaAlerta}{RGB}{255,152,0}
+
+% Personalización del tema
+\setbeamercolor{structure}{fg=azulUTQ}
+\setbeamercolor{frametitle}{bg=azulUTQ,fg=white}
+\setbeamercolor{title}{fg=azulUTQ}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[triangle]
+
+% Información del documento
+\title[Estandarización de Materiales Educativos]{%
+	Proyecto de Estandarización\\
+	de Materiales Educativos}
+\subtitle{Sistematización del Desarrollo de\\Actividades de Desarrollo (ADs)}
+\author{Equipo de Desarrollo Pedagógico}
+\institute{Universidad Tecnológica de Querétaro}
+\date{\today}
+
+% Logo en el pie de página
+%\logo{\includegraphics[height=0.8cm]{placeholder_logo_utq.png}}
+
+\begin{document}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PORTADA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+\begin{frame}
+	\titlepage
+	\begin{center}
+		\small
+		\textit{Una propuesta metodológica para garantizar calidad,\\
+				coherencia y escalabilidad en el desarrollo de recursos didácticos}
+	\end{center}
+\end{frame}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% ÍNDICE
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{frame}{Agenda}
+		\tableofcontents
+	\end{frame}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% SECCIÓN 1: SITUACIÓN ACTUAL
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\section{Situación Actual}
+	
+	\begin{frame}{Desafíos Identificados}
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				\begin{block}{Falta de Estandarización}
+					\begin{itemize}
+						\item Inconsistencias en formato
+						\item Variabilidad en estructura
+						\item Calidad heterogénea
+					\end{itemize}
+				\end{block}
+				
+				\begin{block}{Proceso No Sistemático}
+					\begin{itemize}
+						\item Desarrollo ad-hoc
+						\item Sin metodología clara
+						\item Ausencia de criterios
+					\end{itemize}
+				\end{block}
+			\end{column}
+			
+			\begin{column}{0.5\textwidth}
+				\begin{block}{Ineficiencia Operativa}
+					\begin{itemize}
+						\item Duplicación de esfuerzos
+						\item Reinvención de recursos
+						\item Pérdida de tiempo
+					\end{itemize}
+				\end{block}
+				
+				\begin{block}{Falta de Evaluación}
+					\begin{itemize}
+						\item Sin criterios objetivos
+						\item Calidad no medible
+						\item Mejora no sistemática
+					\end{itemize}
+				\end{block}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% SECCIÓN 2: PROPUESTA
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\section{Nuestra Propuesta}
+	
+	\begin{frame}{Solución Integral}
+		\begin{center}
+			\Large
+			\textcolor{azulUTQ}{\textbf{Guía Metodológica Integral}}\\
+			\vspace{0.5cm}
+			\normalsize
+			para el desarrollo estandarizado de\\
+			Actividades de Desarrollo (ADs)
+		\end{center}
+		
+		\vspace{1cm}
+		
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				\begin{itemize}
+					\item \textbf{Metodología estructurada} en 4 fases
+					\item \textbf{Control de calidad} por pares
+				\end{itemize}
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				\begin{itemize}
+					\item \textbf{Herramientas estandarizadas}
+					\item \textbf{Proceso escalable} y replicable
+				\end{itemize}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	\begin{frame}{Metodología de Cuatro Fases}
+		\begin{center}
+			\begin{tikzpicture}[scale=0.8]
+				% Fase 1
+				\node[rectangle, draw=azulUTQ, fill=azulUTQ!20, minimum width=3cm, minimum height=1.5cm] at (0,0) {
+					\begin{minipage}{2.8cm}
+						\centering
+						\textbf{Fase 1}\\
+						\small Análisis y\\Diseño Pedagógico
+					\end{minipage}
+				};
+				
+				% Fase 2
+				\node[rectangle, draw=azulUTQ, fill=azulUTQ!20, minimum width=3cm, minimum height=1.5cm] at (4,0) {
+					\begin{minipage}{2.8cm}
+						\centering
+						\textbf{Fase 2}\\
+						\small Creación y\\Redacción
+					\end{minipage}
+				};
+				
+				% Fase 3
+				\node[rectangle, draw=azulUTQ, fill=azulUTQ!20, minimum width=3cm, minimum height=1.5cm] at (8,0) {
+					\begin{minipage}{2.8cm}
+						\centering
+						\textbf{Fase 3}\\
+						\small Estandarización\\y Organización
+					\end{minipage}
+				};
+				
+				% Fase 4
+				\node[rectangle, draw=azulUTQ, fill=azulUTQ!20, minimum width=3cm, minimum height=1.5cm] at (12,0) {
+					\begin{minipage}{2.8cm}
+						\centering
+						\textbf{Fase 4}\\
+						\small Validación\\y Entrega
+					\end{minipage}
+				};
+				
+				% Flechas
+				\draw[->, thick, azulUTQ] (1.5,0) -- (2.5,0);
+				\draw[->, thick, azulUTQ] (5.5,0) -- (6.5,0);
+				\draw[->, thick, azulUTQ] (9.5,0) -- (10.5,0);
+			\end{tikzpicture}
+		\end{center}
+		
+		\vspace{0.5cm}
+		
+		\begin{itemize}
+			\item \textbf{Fase 1:} Consulta del programa y selección metodológica
+			\item \textbf{Fase 2:} Desarrollo de contenido con formato LaTeX
+			\item \textbf{Fase 3:} Aplicación de nomenclaturas y estructura
+			\item \textbf{Fase 4:} Revisión por pares y generación de PDF final
+		\end{itemize}
+	\end{frame}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% SECCIÓN 3: COMPONENTES
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\section{Ecosistema de Materiales}
+	
+	\begin{frame}{Paquete Integral por Unidad}
+		\begin{center}
+			\textbf{Cada unidad académica contará con cuatro componentes:}
+		\end{center}
+		
+		\vspace{0.5cm}
+		
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				\begin{block}{AD - Actividades de Desarrollo}
+					Material principal para aprendizaje autónomo
+				\end{block}
+				
+				\begin{block}{AR - Actividades de Reforzamiento}
+					Ejercicios complementarios para práctica
+				\end{block}
+			\end{column}
+			
+			\begin{column}{0.5\textwidth}
+				\begin{block}{AVS - Verificación de Saberes}
+					Evaluación sumativa presencial
+				\end{block}
+				
+				\begin{block}{ER - Evaluación de Recuperación}
+					Evaluación alternativa de recuperación
+				\end{block}
+			\end{column}
+		\end{columns}
+		
+		\vspace{0.5cm}
+		
+		\begin{center}
+			\textcolor{verdeExito}{\textbf{Cobertura completa del proceso educativo}}
+		\end{center}
+	\end{frame}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% SECCIÓN 4: BENEFICIOS
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\section{Beneficios Institucionales}
+	
+	\begin{frame}{Ventajas Estratégicas}
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				\begin{alertblock}{Calidad Garantizada}
+					\begin{itemize}
+						\item Precisión técnica validada
+						\item Efectividad pedagógica
+						\item Revisión por expertos
+					\end{itemize}
+				\end{alertblock}
+				
+				\begin{alertblock}{Eficiencia Operativa}
+					\begin{itemize}
+						\item Reducción de tiempo
+						\item Optimización de recursos
+						\item Eliminación de duplicidades
+					\end{itemize}
+				\end{alertblock}
+			\end{column}
+			
+			\begin{column}{0.5\textwidth}
+				\begin{alertblock}{Imagen Institucional}
+					\begin{itemize}
+						\item Profesionalización
+						\item Uniformidad de materiales
+						\item Fortalecimiento del prestigio
+					\end{itemize}
+				\end{alertblock}
+				
+				\begin{alertblock}{Escalabilidad}
+					\begin{itemize}
+						\item Metodología replicable
+						\item Crecimiento sostenido
+						\item Adaptabilidad futura
+					\end{itemize}
+				\end{alertblock}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% SECCIÓN 5: INNOVACIÓN
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\section{Innovación Metodológica}
+	
+	\begin{frame}{Diferenciadores Únicos}
+		\begin{itemize}
+			\item \textbf{Doble Validación:}
+			\begin{itemize}
+				\item \textit{Pares Colaboradores:} Coherencia metodológica
+				\item \textit{Pares Expertos:} Precisión técnica industrial
+			\end{itemize}
+			
+			\vspace{0.3cm}
+			
+			\item \textbf{Precisión Técnica:}
+			\begin{itemize}
+				\item Formato LaTeX obligatorio para expresiones matemáticas
+				\item Nomenclatura estandarizada de archivos
+			\end{itemize}
+			
+			\vspace{0.3cm}
+			
+			\item \textbf{Contextualización Nacional:}
+			\begin{itemize}
+				\item Ejemplos específicos de la industria mexicana
+				\item Aplicaciones relevantes al contexto local
+			\end{itemize}
+			
+			\vspace{0.3cm}
+			
+			\item \textbf{Mejora Continua:}
+			\begin{itemize}
+				\item Ciclo de retroalimentación estructurado
+				\item Evolución constante del proceso
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% SECCIÓN 6: IMPLEMENTACIÓN
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\section{Implementación}
+	
+	\begin{frame}{Cronograma de Implementación}
+		\begin{center}
+			\begin{tabular}{@{}p{2cm}p{3cm}p{6cm}@{}}
+				\toprule
+				\textbf{Período} & \textbf{Fase} & \textbf{Actividades} \\
+				\midrule
+				Mes 1-2 & Capacitación & Formación del equipo docente en la metodología \\
+				\midrule
+				Mes 3-4 & Piloto & Desarrollo de ADs para 2-3 asignaturas clave \\
+				\midrule
+				Mes 5-6 & Evaluación & Análisis de resultados y ajustes metodológicos \\
+				\midrule
+				Mes 7-12 & Escalamiento & Implementación en todas las asignaturas \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		
+		\vspace{0.5cm}
+		
+		\begin{center}
+			\textcolor{verdeExito}{\textbf{Implementación gradual y controlada}}
+			\end{center>
+			\end{frame}
+			
+			\begin{frame}{Recursos Requeridos}
+				\begin{columns}
+					\begin{column}{0.5\textwidth}
+						\begin{block}{Recursos Humanos}
+							\begin{itemize}
+								\item Coordinador del proyecto
+								\item Equipo de revisores pares
+								\item Docentes participantes
+								\item Expertos industriales
+							\end{itemize}
+						\end{block}
+					\end{column}
+					
+					\begin{column}{0.5\textwidth}
+						\begin{block}{Recursos Técnicos}
+							\begin{itemize}
+								\item Herramientas LaTeX/Markdown
+								\item Sistema de gestión documental
+								\item Plataforma de colaboración
+								\item Templates y plantillas
+							\end{itemize}
+						\end{block}
+					\end{column}
+				\end{columns}
+				
+				\vspace{0.5cm}
+				
+				\begin{center}
+					\textcolor{azulUTQ}{\textbf{Inversión inicial mínima para máximo impacto}}
+					\end{center>
+						\end{frame>
+							
+							%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+							% SECCIÓN 7: CONCLUSIÓN
+							%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+							
+							\section{Llamada a la Acción}
+							
+							\begin{frame}{Es Momento de Liderar el Cambio}
+								\begin{center}
+									\Large
+									\textcolor{azulUTQ}{\textbf{Esta propuesta posiciona a nuestra institución}}\\
+									\textcolor{azulUTQ}{\textbf{como pionera en sistematización educativa}}
+									
+									\vspace{1cm}
+									
+									\normalsize
+									\begin{block}{Pregunta Clave}
+										\centering
+										¿Están listos para transformar\\
+										nuestro proceso educativo?
+									\end{block}
+									
+									\vspace{0.5cm>
+										
+										\textit{``La excelencia educativa no es un accidente.\\
+											Es el resultado de un proceso intencional,\\
+											sistemático y bien ejecutado.''}
+										\end{center>
+											\end{frame>
+												
+												\begin{frame}{Próximos Pasos}
+													\begin{enumerate}
+														\item \textbf{Aprobación del proyecto} por parte de la dirección
+														
+														\vspace{0.3cm}
+														
+														\item \textbf{Asignación de recursos} humanos y técnicos
+														
+														\vspace{0.3cm}
+														
+														\item \textbf{Conformación del equipo} de trabajo
+														
+														\vspace{0.3cm}
+														
+														\item \textbf{Inicio de la fase piloto} con asignaturas seleccionadas
+														
+														\vspace{0.3cm}
+														
+														\item \textbf{Evaluación y ajustes} basados en resultados iniciales
+														\end{enumerate>
+															
+															\vspace{1cm}
+															
+															\begin{center}
+																\textcolor{verdeExito}{\Large \textbf{¡Estamos listos para comenzar!}}
+																\end{center>
+																	\end{frame>
+																		
+																		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+																		% SLIDE FINAL
+																		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+																		
+																		\begin{frame}{}
+																			\begin{center}
+																				\Huge
+																				\textcolor{azulUTQ}{\textbf{¿Preguntas?}}
+																				
+																				\vspace{1cm}
+																				
+																				\Large
+																				Gracias por su atención
+																				
+																				\vspace{0.5cm}
+																				
+																				\normalsize
+																				Equipo de Desarrollo Pedagógico\\
+																				Universidad Tecnológica de Querétaro
+																				\end{center>
+																				\end{frame}
+																				
+																				\end{document>
